@@ -7,7 +7,13 @@
 	#desktopView{
 		display: none;
 	}
-
+	#tvView{
+		display: none;
+	}
+	#tabletView1{
+		display: none;
+	}
+	
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1279px){
@@ -20,17 +26,29 @@
 	#desktopView{
 		display: none;
 	}
+	#tvView{
+		display: none;
+	}
+	#tabletView1{
+		
+	}
 }
 
-@media only screen and (min-width: 1280px)  and (max-width: 1919px){
+@media only screen and (min-width: 1280px)  and (max-width: 1920px){
     #mobileView {
 		display: none;
     }
 	#tabletView{
 		display: none;
 	}
+	#tabletView1{
+		display: none;
+	}
 	#desktopView{
 		
+	}
+	#tvView{
+		display: none;
 	}
 
 	
@@ -39,7 +57,7 @@
 	}
 }
 
-@media only screen and (min-width: 1919px) {
+@media only screen and (min-width: 1921px) {
     #mobileView {
 		display: none;
     }
@@ -48,7 +66,13 @@
 	#desktopView{
 		display: none;
 	}
-
+	#tvView{
+		
+	}
+	
+	#tabletView1{
+		display: none;
+	}
 	
 	body{
 		font-size: 1.5em;
@@ -102,7 +126,7 @@
 
 .related{
 	background: darkgrey;
-	width: 82px;
+	width: 83px;
 	
 }
 
