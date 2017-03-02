@@ -48,8 +48,30 @@ var login = false;
 			$("#expand").find("span").addClass("glyphicon-plus").removeClass("glyphicon-minus");
 		}
 	});
+	
+	//Ideally I would be able to pull JSON data from the site due to the hosting but since I'm not using a generator of some kind 
+	//it's a bit more difficult so for now I will simply let this object with all my pages suffice.
+	var site = {
+		"tim berners-lee" : {
+			"link": "/lee.html"
+		},
+		"marie curie" : {
+			"link": "/curie.html"
+		},
+		"charles darwin": {
+			"link": "/darwin.html"
+		},
+		"johannes kepler" : {
+			"link": "/kepler.html"
+		},
+		"gregor mendel" : {
+			"link": "/mendel.html"
+		}
+	};
 
 
+	
+	//SEARCHING!!  http://frontendcollisionblog.com/javascript/jekyll/tutorial/2015/03/26/getting-started-with-a-search-engine-for-your-site-no-server-required.html
 
 });
 
