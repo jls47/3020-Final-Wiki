@@ -70,6 +70,11 @@ var login = false;
 	var editable = false;
 	
 	$("button.editAll").click(function() {
+		if(login == false){
+			alert("You must log in before you can start editing!");
+			break;
+		};
+		
 		if($(".container").attr("contenteditable") == "true"){
 			console.log($(".container").attr("contenteditable"));
 			$(".container").attr("contenteditable", "false");
