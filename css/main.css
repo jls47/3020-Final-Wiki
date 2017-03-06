@@ -7,30 +7,33 @@
 	#desktopView{
 		display: none;
 	}
-
+	#tvView{
+		display: none;
+	}
+	
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1279px){
     #mobileView {
-		display: none;
+		
     }
-	#tabletView{
-
-	}
 	#desktopView{
+		display: none;
+	}
+	#tvView{
 		display: none;
 	}
 }
 
-@media only screen and (min-width: 1280px)  and (max-width: 1919px){
+@media only screen and (min-width: 1280px)  and (max-width: 1920px){
     #mobileView {
 		display: none;
     }
-	#tabletView{
-		display: none;
-	}
 	#desktopView{
 		
+	}
+	#tvView{
+		display: none;
 	}
 
 	
@@ -39,22 +42,23 @@
 	}
 }
 
-@media only screen and (min-width: 1919px) {
+@media only screen and (min-width: 1921px) {
     #mobileView {
 		display: none;
     }
-	#tabletView{
-	}
+
 	#desktopView{
 		display: none;
 	}
-
+	#tvView{
+		
+	}
 	
 	body{
 		font-size: 1.5em;
 	}
 	
-}
+} 
 
 
 .col-height{
@@ -86,7 +90,17 @@
 	border: 1px solid lightblue;
 	margin-right: 5%;
 	padding: 5px;
+	width: 300px;
 }
+
+.imagebox p{
+	text-align: center;
+}
+
+.map{
+	width: 300px;
+	height: 300px;
+};
 
 .content-footer{
 	background: lightgrey;
@@ -102,7 +116,7 @@
 
 .related{
 	background: darkgrey;
-	width: 82px;
+	width: 83px;
 	
 }
 
