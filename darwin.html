@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Mt. Rainier Information</title>
+        <title>Charles Darwin</title>
         <meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
@@ -31,7 +31,7 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 <div class = "headers">
-   <nav class="navbar navbar-inverse" data-spy = "affix" data-offset-top="50" id = "mobileView">
+      <nav class="navbar navbar-inverse" data-spy = "affix" data-offset-top="50" id = "mobileView">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" id = "expand">
@@ -44,87 +44,31 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
           <ul class="nav navbar-nav">
-            <li><a href="#login">Login</a></li>
+            
 			<!-- Use JQUERY upon login to generate a logout button -->
-            <li><a href="#map">Talk</a></li>
-            <li><a href="#links">Random</a></li>
-			<li><a href="#help">Help</a></li>
+            <li><button class="btn btn-default"><a href="talk.html">Talk</a></button></li>
+            <li><button class="btn btn-default" id = "random">Random</button></li>
+			<li><button class="btn btn-default"><a href="help.html">Help</a></button></li>
 			<li><button class="btn btn-default edit"><span class = "glyphicon glyphicon-pencil"></span></button></li>
 			<li>
-			<div class="col-md-3 pull-left">
-					<form class="navbar-form" role="search">
+			
+				<form class="navbar-form" role="search" id = "searchBar">
 					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search" name="srch-term" id="search">
+						<input type="text" placeholder="Type keywords here." class="form-control" name="searchText" id = "searchText">
 						<div class="input-group-btn">
-							<button class="btn btn-default" type="submit" id = "search"><i class="glyphicon glyphicon-search"></i></button>
+							<button type="submit" class="btn btn-primary search" name="searchButton">Search</button>
 						</div>
 					</div>
 				</form>
-			</div>
+			
 			</li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-	
-	<nav class="navbar navbar-inverse" data-spy = "affix" data-offset-top="50" id = "tabletView">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-            <span class="sr-only">Toggle navigation</span>
-            <span class = "glyphicon glyphicon-th"></span>
-          </button>
-          <a class="navbar-brand" href="#">Wikilogo</a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-          <ul class="nav navbar-nav">
-            <li><a href="#login" id = "tvView">Login</a></li>
-			
-			<li class="dropdown" id = "tabletView1">
-                        <a class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a>
-                        <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
-                            <div class="col-lg-12">
-                                <div class="text-center"><h3><b>Log In</b></h3></div>
-                                <form id="ajax-login-form" action="http://phpoll.com/login/process" method="post" role="form" autocomplete="off">
-                                    <div class="form-group">
-                                        <label for="username">Username</label>
-                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="" autocomplete="off">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" autocomplete="off">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="row">
-                                            <div class="col-xs-7">
-                                                <input type="checkbox" tabindex="3" name="remember" id="remember">
-                                                <label for="remember"> Remember Me</label>
-                                            </div>
-                                            <div class="col-xs-5 pull-right">
-                                                <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" value="Log In">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
-                                </form>
-                            </div>
-                        </ul>
-                    </li>
-			
-            <li><a href="#links">Create Account</a></li>
-			    <div class="col-md-6 pull-right">
-					<form class="navbar-form" role="search">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search" name="srch-term" id="search">
-						<div class="input-group-btn">
-							<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-						</div>
-					</div>
-				</form>
-			</div>
+		<li>	
+		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "Logout">Logout</a></div>
+          <form class="navbar-form navbar-right" role="form" id="login">
+            <a class="btn btn-default btn-sm" id = "Login">Login</a><br>
+			<a href="#createaccount">Create account</a>
+          </form>
+		  </li>
           </ul>
         </div>
       </div>
@@ -134,36 +78,36 @@
 	<nav class = "navbar navbar-default" id = "desktopNavbar">
 		<div class = "container">
 			<div class="navbar-header col-md-6 col-height">
-				<a class="navbar-brand" href="#">Wikilogo</a>
+				<a class="navbar-brand" href="index.html"><img src = "design/images/earth.png" style="width:130px;"></a>
 				
 			</div>
 		</div>
 		
-		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "Logout">Logout</a></div>
-          <form class="navbar-form navbar-right" role="form" id="login">
+		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "LogoutD">Logout</a></div>
+          <form class="navbar-form navbar-right" role="form" id="loginD">
             <div class="form-group">
               <input type="text" placeholder="Email" class="form-control">
             </div>
             <div class="form-group">
               <input type="password" placeholder="Password" class="form-control">
             </div>
-            <a class="btn btn-default btn-sm" id = "Login">Login</a><br>
+            <a class="btn btn-default btn-sm" id = "LoginD">Login</a><br>
 			<a href="#createaccount">Create account</a>
           </form>
 		
 		<div class = "navtabs">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#">Read</a></li>
-			<li><a href="#">Talk</a></li>
-			<li><a href="#">Edit</a></li>
+			<li><a href="talk.html">Talk</a></li>
+			<li><button class = " btn btn-default btn-sm editAll">Edit <span class = "glyphicon glyphicon-pencil"></span></button></li>
 		</ul>
 		
 		</nav>
-		<form class="navbar-form" role="search" id = "searchBar">
+				<form class="navbar-form" role="search" id = "searchBar">
 					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search" name="srch-term" id="search">
+						<input type="text" placeholder="Type keywords here." class="form-control" name="searchText" id = "searchTextD">
 						<div class="input-group-btn">
-							<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+							<button type="submit" class="btn btn-primary searchD" name="searchButton">Search</button>
 						</div>
 					</div>
 				</form>
@@ -173,23 +117,25 @@
 		<div class="col-md-2 col-haight" id="leftCol">
               
               	<ul class="nav nav-stacked" id="sidebar">
-                  <li><a href="#sec0">Main Page</a></li>
-                  <li><a href="#sec1">Directory</a></li>
-                  <li><a href="#sec2">Random</a></li>
-                  <li><a href="#sec3">Download as PDF</a></li>
-                  <li><a href="#sec4">Help</a></li>
+                  <li><a href="index.html">Main Page</a></li>
+                  <li><a href="dir.html">Directory</a></li>
+                  <li><button class="btn btn-default random" id = "random">Random</button></li>
+				  <!-- Create pdf function -->
+                   <li><button class="btn btn-default" id = "pdf">Download as PDF</button></li>
+				  <!-- Create help page -->
+                   <li><a href="help.html">Help</a></li>
               	</ul>
               
       		</div>  
 		</div>
 	</div>
-</div>
+</div> 
 
-<div class = "container">
+<div class = "container" id = "mainBody" contenteditable = "false">
 <h1>Charles Darwin</h1>
 <hr>
 <div class = "imagebox">
-	<p>IMAGE GOES HERE</P>
+	<p><img src = "design/images/darwin.jpg" style="width:250px;"></p>
 	<p>IMAGE TEXT GOES HERE AND EXPLAINS THINGS</p>
 </div>
 <p>INTROINFOINTROINFOINTROINFOINTROINFO INTROINFOINTROINFOINTROINFOINTROINFO</p>
@@ -205,16 +151,19 @@
 
 <div class = "mainContent"><hr>
 	<h2 data-toggle="collapse" data-target=".content1" id = "mobileView">CONTENTHEADER</h2>
-	<h2 id = "tabletView">CONTENTHEADER</h2>
-	<h2 id = "desktopView">CONTENTHEADER1</h2><hr>
+	<h2 id = "desktopView">CONTENTHEADER1<button class = " btn btn-default btn-sm edit">Edit <span class = "glyphicon glyphicon-pencil"></span></button></h2><hr>
 	<p class = "content1">CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </p>
 	<br>
 	<h2 data-toggle="collapse" data-target=".content2" id = "mobileView">CONTENTHEADER</h2>
-	<h2 id = "tabletView" class = "desktopView">CONTENTHEADER</h2>
-	<h2 id = "desktopView">CONTENTHEADER2</h2><hr>
+	<h2 id = "desktopView">CONTENTHEADER2<button class = " btn btn-default btn-sm edit">Edit <span class = "glyphicon glyphicon-pencil"></span></button></h2><hr>
 	<div class = "imagebox">
-		<p>IMAGE OR MAP GOES HERE</P>
-		<p>IMAGE OR MAP TEXT GOES HERE AND EXPLAINS THINGS</p>
+		<p><div class = "mapbox"><iframe
+			width="290"
+			height="300"
+			frameborder="0" style="border:0"
+			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCC8spjvfLSkO96FHDlJfac1Yla9SRBWRc&q=Galapagos+Islands" allowfullscreen>
+		</iframe></div></p>
+		<p>The Galapagos Islands, where Darwin made his landmark discoveries and laid the foundations for the field of evolutionary biology.</p>
 	</div>
 	<p class = "content2"><a href="lee.html">CONTENT</a> CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </p>
 
@@ -235,15 +184,19 @@
 		<li>EXAMPLE</li>
 	</ul>
 </div>
-	
+</div>
 <br>
     
 
 	(c) JLS 2017
     </body>
 	
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+	<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC8spjvfLSkO96FHDlJfac1Yla9SRBWRc&callback=initMap">
+    </script>
+	
+	<script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
     <script src="js/vendor/bootstrap.min.js"></script>
 
     <script src="js/main.js"></script>
