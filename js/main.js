@@ -137,19 +137,19 @@ var login = false;
 			alert("Put some text to search, ya dingus!");
 			return;
 		};
-		console.log(site["tim berners-lee"]["link"]);
+		console.log(site.bernerslee.href);
 		if(tags.toLowerCase().includes("tim") || tags.toLowerCase().includes("berners") || tags.toLowerCase().includes("lee")){
-			location.replace("lee.html");
+			location.replace(site.bernerslee.href);
 		}else if(tags.toLowerCase().includes("marie") || tags.toLowerCase().includes("curie")){
-			location.replace("curie.html");
+			location.replace(site.curie.href);
 		}else if(tags.toLowerCase().includes("charles") || tags.toLowerCase().includes("darwin")){
-			location.replace("darwin.html");
+			location.replace(site.darwin.href);
 		}else if(tags.toLowerCase().includes("johannes") || tags.toLowerCase().includes("kepler")){
-			location.replace("kepler.html");
+			location.replace(site.kepler.href);
 		}else if(tags.toLowerCase().includes("gregor") || tags.toLowerCase().includes("mendel")){
-			location.replace("mendel.html");
+			location.replace(site.mendel.href);
 		}else if(tags.toLowerCase().includes("johnson") || tags.toLowerCase().includes("katherine")){
-			location.replace("johnson.html");
+			location.replace(site.johnson.href);
 		}else{
 			location.replace("dne.html");
 		};
