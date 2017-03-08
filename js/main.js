@@ -197,6 +197,27 @@ var login = false;
 	});
 	
 	
+	$(".TOC").find("a").on('click', function(event) {
+		console.log(this.hash);
+		var hash = this.hash;
+		if (hash !== "") {
+			// Prevent default anchor click behavior
+			event.preventDefault;
+
+			// Using jQuery's animate() method to add smooth page scroll
+			// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+			$('html, body').animate({
+				scrollTop: $(hash).offset().top 	
+			}, 800, function(){
+				// Add hash (#) to URL when done scrolling (default click behavior)
+				window.location.hash = hash;
+			});
+		} // End if
+	});
+	
+	
+	
+	
 	//ADDING THE MAPS
 	
 //MAPS	
@@ -234,8 +255,6 @@ var insPoint = L.marker([-0.880992, -89.523137]).bindPopup("Isla San Cristobal, 
 	SVT = L.marker([-1.2627, -90.437749]).bindPopup("Isla Floreana, where Darwin spent September 24-27."),
 	campMuir = L.marker([-0.732692, -90.984318]).bindPopup("Isla Isabela, where the Beagle spent September 29-October 2."),
 	ingGlacier = L.marker([-0.290511, -90.690434]).bindPopup("Isla Santiago, where the Beagle spent October 8-17 before leaving for Tahiti.")
-	paradise = L.marker([46.785022, -121.734545]).bindPopup("Paradise, the closest town to Rainier")
-	summit = L.marker([46.8523, -121.7603]).bindPopup("Mt Rainier's Summit")
 
 	
 //putting them all into a layer group

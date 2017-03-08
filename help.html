@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Tim Berners-Lee</title>
+        <title>Page Not Found</title>
         <meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
@@ -63,8 +63,8 @@
 			
 			</li>
 		<li>	
-		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "Logout">Logout</a></div>
-          <form class="navbar-form navbar-right" role="form" id="login">
+		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "LogoutD">Logout</a></div>
+          <form class="navbar-form navbar-right" role="form" id="loginD">
             <a class="btn btn-default btn-sm" id = "Login">Login</a><br>
 			<a href="#createaccount">Create account</a>
           </form>
@@ -83,8 +83,8 @@
 			</div>
 		</div>
 		
-		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "LogoutD">Logout</a></div>
-          <form class="navbar-form navbar-right" role="form" id="loginD">
+		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "Logout">Logout</a></div>
+          <form class="navbar-form navbar-right" role="form" id="login">
             <div class="form-group">
               <input type="text" placeholder="Email" class="form-control">
             </div>
@@ -129,74 +129,56 @@
 	</div>
 </div> 
 
-<div class = "container" id = "mainBody" contenteditable = "false">
-<h1>Tim Berners-Lee</h1>
+<div class = "container" id = "mainBody">
+<h1>This is the help page!  </h1>
 <hr>
-<div class = "imagebox">
-	<p><img src = "design/images/bernerslee.jpg" style="width:250px;"></p>
-	<p>IMAGE TEXT GOES HERE AND EXPLAINS THINGS</p>
-</div>
-<p>INTROINFOINTROINFOINTROINFOINTROINFO INTROINFOINTROINFOINTROINFOINTROINFO</p>
-<br><br>
 <div class = "TOC">
 	<p>Table of Contents</p>
 	<ol>
-		<li><a href="#content1">Content1</a></li>
-		<li><a href = "#content2">Content2</a></li>
+		<li><a href="#bio">Logging in</a></li>
+		<li><a href="#chem">Editing</a></li>
+		<li><a href="#math">Creating</a></li>
+		<li><a href="#phys">Searching</a></li>
+		<li><a href="#astro">Talk</a></li>
 	</ol>
 
 </div>
 
 
-<div class = "mainContent"><hr>
-	<h2 data-toggle="collapse" data-target=".content1" id = "mobileView">CONTENTHEADER</h2>
-	<h2 id = "desktopView">CONTENTHEADER1</h2><hr>
-	<p id = "content1">CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </p>
-	<br>
-	<h2 data-toggle="collapse" data-target=".content2" id = "mobileView">CONTENTHEADER</h2>
-	<h2 id = "desktopView">CONTENTHEADER2</h2><hr>
-	<div class = "imagebox">
-		<p><div class = "mapbox"><iframe
-			width="288"
-			height="300"
-			frameborder="0" style="border:0"
-			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCC8spjvfLSkO96FHDlJfac1Yla9SRBWRc&q=European+Council+for+Nuclear+Research,Switzerland" allowfullscreen>
-		</iframe></div></p>
-		<p>The site of Lee's most important work, the birthplace of the internet, and the largest particle physics laboratory in the world.</p>
-	</div>
-	<p id = "content2"><a href="lee.html">CONTENT</a> CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </p>
 
-</div>
+
+<h3 id = "bio">Logging In</h3>
+<hr>
+<p>This is just an example function.  No login data is stored and if it were I would probably only know how to use localstorage.</p>
 <br><br><br>
-<div class = "content-footer">
-	<p>Related:</p>
-	<p class = "related">| Category1 |</p>
-	<ul class = "relatedArts">
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-	</ul><br><br>
-	<p class = "related">| Category2 |</p>
-	<ul class = "relatedArts">
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-	</ul>
-</div>
-</div>
+<h3 id = "chem">Editing</h3>
+<hr>
+<p>Editing is pretty basic.  Just click on the edit button and type away!  The changes are not saved, but for the time being the content is editable.</p>
+<br><br><br>
+<h3 id = "math">Creating</h3>
+<hr>
+<p>That doesn't exist yet!</p><br>
+<br><br>
+
+<h3 id = "phys">Searching</h3>
+<hr>
+<p>It's very basic.  Type in any of the names of any of the scientists in the directory and it should bring you to the page.  I have not yet accounted for typos, but if you type in "tim" you'll get the article for Tim Berners-Lee so it's something!</p><br>
+<br><br>
+
+<h3 id = "astro">Talk</h3>
+<hr>
+<p>Not functioning currently outside of immediate edits that only last for a moment</p>
+
 <br>
+</div>
     
 
 	(c) JLS 2017
     </body>
 	
-	<script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC8spjvfLSkO96FHDlJfac1Yla9SRBWRc&callback=initMap">
-    </script>
-	
 	<script src="js/vendor/jquery-1.11.2.min.js"></script>
     <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
     <script src="js/vendor/bootstrap.min.js"></script>
-	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
     <script src="js/main.js"></script>
 </html>
