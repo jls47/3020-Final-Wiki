@@ -117,10 +117,12 @@ var login = false;
 		mendel : {
 			href: "mendel.html"
 		},
-		johnson:
+		johnson: {
+			href: "johnson.html"
+		}
 	};
 	
-	console.log(site."tim berners-lee"."link"
+	console.log(site.bernerslee.href);
 	
 	var tags = "";
 	
