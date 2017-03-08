@@ -84,6 +84,7 @@ var login = false;
 		};
 	});
 	
+	console.log(window.location.href);
 	
 	$(".talk").click(function(e) {
 		e.preventDefault();
@@ -186,10 +187,9 @@ var login = false;
 		
 	});
 	
-	var page = ['lee.html', 'curie.html', 'darwin.html', 'kepler.html', 'mendel.html'];
+	var page = ['lee.html', 'curie.html', 'darwin.html', 'kepler.html', 'mendel.html', 'johnson.html'];
 	
 	$("button.random").click(function(e){
-	//var random = function(){
 		var index = Math.floor(Math.random() * page.length);
 		console.log(index);
 		console.log(page.length);
@@ -230,15 +230,16 @@ var baseMaps = {
 console.dir(baseMaps);
 
 //including the points of interest with coordinates and popups!
-var insPoint = L.marker([46.773421, -121.745159]).bindPopup("Inspiration Point"),
-	SVT = L.marker([46.794075, -121.715850]).bindPopup("Stevens-Van Trump Historical Monument"),
-	campMuir = L.marker([46.835563, -121.731734]).bindPopup("Camp Muir: First night"),
-	ingGlacier = L.marker([46.838465, -121.712035]).bindPopup("Ingraham Glacier campsite: Second night")
+var insPoint = L.marker([-0.880992, -89.523137]).bindPopup("Isla San Cristobal, where Darwin first disembarked and stayed from September 17-22."),
+	SVT = L.marker([-1.2627, -90.437749]).bindPopup("Isla Floreana, where Darwin spent September 24-27."),
+	campMuir = L.marker([-0.732692, -90.984318]).bindPopup("Isla Isabela, where the Beagle spent September 29-October 2."),
+	ingGlacier = L.marker([-0.290511, -90.690434]).bindPopup("Isla Santiago, where the Beagle spent October 8-17 before leaving for Tahiti.")
 	paradise = L.marker([46.785022, -121.734545]).bindPopup("Paradise, the closest town to Rainier")
 	summit = L.marker([46.8523, -121.7603]).bindPopup("Mt Rainier's Summit")
 
+	
 //putting them all into a layer group
-var POIs = L.layerGroup([insPoint, SVT, campMuir, ingGlacier, paradise, summit]);
+var POIs = L.layerGroup([insPoint, SVT, campMuir, ingGlacier]);
 	console.log(POIs);
 //and then an overlay!
 var overlayMaps = {
@@ -247,8 +248,8 @@ var overlayMaps = {
 
 //finally, establishing the map container at map-container, with the satellite layer and POIs loaded by default
 var myMap = L.map('map-container', {
-	center: [46.85, -121.78],
-	zoom: 11,
+	center: [-0.9538, -90.5],
+	zoom: 7,
 	layers: [satellite, POIs]
 });
 
