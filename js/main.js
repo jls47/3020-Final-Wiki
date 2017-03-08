@@ -102,7 +102,7 @@ var login = false;
 	//Ideally I would be able to pull JSON data from the site due to the hosting but since I'm not using a generator of some kind 
 	//it's a bit more difficult so for now I will simply let this object with all my pages suffice.
 	var site = {
-		berners-lee : {
+		bernerslee : {
 			href: "lee.html"
 		},
 		curie : {
