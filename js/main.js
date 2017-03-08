@@ -9,6 +9,8 @@ var login = false;
         lastName: 'Brown'
     };
 
+	console.log(login);	
+	
 	if(login == false){
 		$(".login").css("display", "default");
 		$(".user-info").css("display", "none");
@@ -26,6 +28,7 @@ var login = false;
 		$(".user-fullname").replaceWith(userInfo.firstName + " " + userInfo.lastName);
 		//Lastly, here's the boolean being changed.
 		login = true;
+		console.log(login);
 	});
 	
 	$("#LoginD").click(function(){
@@ -72,7 +75,7 @@ var login = false;
 	$("button.editAll").click(function() {
 		if(login == false){
 			alert("You must log in before you can start editing!");
-			break;
+			return;
 		};
 		
 		if($(".container").attr("contenteditable") == "true"){
@@ -84,6 +87,17 @@ var login = false;
 	});
 	
 	
+	$(".talk").click(function(e) {
+		e.preventDefault();
+		var href = window.location.href.toString();
+		localStorage.setItem("href", href);
+		document.location.href="talk.html";
+	});
+	
+	$(".read").click(function(e) {
+		e.preventDefault();
+		document.location.href=localStorage.getItem("href");
+	});
 	
 	
 	
