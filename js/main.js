@@ -167,7 +167,7 @@ var login = false;
 			alert("Put some text to search, ya dingus!");
 			return;
 		};
-		console.log(site["tim berners-lee"]["link"]);
+		
 		if(tags.toLowerCase().includes("tim") || tags.toLowerCase().includes("berners") || tags.toLowerCase().includes("lee")){
 			location.replace("lee.html");
 		}else if(tags.toLowerCase().includes("marie") || tags.toLowerCase().includes("curie")){
