@@ -8,8 +8,6 @@ var login = false;
         firstName: 'Jerry',
         lastName: 'Brown'
     };
-
-	console.log(login);	
 	
 	if(login == false){
 		$(".login").css("display", "default");
@@ -104,22 +102,25 @@ var login = false;
 	//Ideally I would be able to pull JSON data from the site due to the hosting but since I'm not using a generator of some kind 
 	//it's a bit more difficult so for now I will simply let this object with all my pages suffice.
 	var site = {
-		"tim berners-lee" : {
-			"link": "lee.html"
+		berners-lee : {
+			href: "lee.html"
 		},
-		"marie curie" : {
-			"link": "curie.html"
+		curie : {
+			href: "curie.html"
 		},
-		"charles darwin": {
-			"link": "darwin.html"
+		darwin : {
+			href: "darwin.html"
 		},
-		"johannes kepler" : {
-			"link": "kepler.html"
+		kepler : {
+			href: "kepler.html"
 		},
-		"gregor mendel" : {
-			"link": "mendel.html"
-		}
+		mendel : {
+			href: "mendel.html"
+		},
+		johnson:
 	};
+	
+	console.log(site."tim berners-lee"."link"
 	
 	var tags = "";
 	
@@ -145,6 +146,8 @@ var login = false;
 			location.replace("kepler.html");
 		}else if(tags.toLowerCase().includes("gregor") || tags.toLowerCase().includes("mendel")){
 			location.replace("mendel.html");
+		}else if(tags.toLowerCase().includes("johnson") || tags.toLowerCase().includes("katherine")){
+			location.replace("johnson.html");
 		}else{
 			location.replace("dne.html");
 		};
@@ -173,6 +176,8 @@ var login = false;
 			location.replace("kepler.html");
 		}else if(tags.toLowerCase().includes("gregor") || tags.toLowerCase().includes("mendel")){
 			location.replace("mendel.html");
+		}else if(tags.toLowerCase().includes("johnson") || tags.toLowerCase().includes("katherine")){
+			location.replace("johnson.html");
 		}else{
 			location.replace("dne.html");
 		};
@@ -187,23 +192,25 @@ var login = false;
 		console.log(index);
 		console.log(page.length);
 		location.replace(page[index]);
-	//};
 	});
 	
 	
 	//ADDING THE MAPS
 	
-	var topo = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2NoYWVmMTYiLCJhIjoiY2l5bDE1aHZ5MDAydTJ3bnpoaWZqbWpkcSJ9.ip2r4oOtxQdBmGDcL7IaWA', {
-		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-		id: 'your.mapbox.project.id'
+//MAPS	
 
-	});
+//including the topographic layer:
+var topo = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2NoYWVmMTYiLCJhIjoiY2l5bDE1aHZ5MDAydTJ3bnpoaWZqbWpkcSJ9.ip2r4oOtxQdBmGDcL7IaWA', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+	id: 'your.mapbox.project.id'
+
+}),
 
 //and the satellite layer:
-	satellite = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2NoYWVmMTYiLCJhIjoiY2l5bDE1aHZ5MDAydTJ3bnpoaWZqbWpkcSJ9.ip2r4oOtxQdBmGDcL7IaWA', {
-		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-		id: 'your.mapbox.project.id'
-	});
+satellite = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2NoYWVmMTYiLCJhIjoiY2l5bDE1aHZ5MDAydTJ3bnpoaWZqbWpkcSJ9.ip2r4oOtxQdBmGDcL7IaWA', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+	id: 'your.mapbox.project.id'
+}),
 
 //and the street layer:
 streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2NoYWVmMTYiLCJhIjoiY2l5bDE1aHZ5MDAydTJ3bnpoaWZqbWpkcSJ9.ip2r4oOtxQdBmGDcL7IaWA', {
@@ -218,6 +225,8 @@ var baseMaps = {
 	"Streets": streets
 };
 
+console.dir(baseMaps);
+
 //including the points of interest with coordinates and popups!
 var insPoint = L.marker([46.773421, -121.745159]).bindPopup("Inspiration Point"),
 	SVT = L.marker([46.794075, -121.715850]).bindPopup("Stevens-Van Trump Historical Monument"),
@@ -228,7 +237,7 @@ var insPoint = L.marker([46.773421, -121.745159]).bindPopup("Inspiration Point")
 
 //putting them all into a layer group
 var POIs = L.layerGroup([insPoint, SVT, campMuir, ingGlacier, paradise, summit]);
-	
+	console.log(POIs);
 //and then an overlay!
 var overlayMaps = {
 	"POIs": POIs
@@ -241,10 +250,9 @@ var myMap = L.map('map-container', {
 	layers: [satellite, POIs]
 });
 
+console.log(myMap);
 //and adding in layers to be switched between.
 L.control.layers(baseMaps, overlayMaps).addTo(myMap);
-
-
 
 });
 	

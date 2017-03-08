@@ -20,8 +20,8 @@
             }
         </style>
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
         <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 		
@@ -118,7 +118,7 @@
               
               	<ul class="nav nav-stacked" id="sidebar">
                   <li><a href="index.html">Main Page</a></li>
-                  <li><a href="dir.html">Directory</a></li>
+                  <li><a href="directory.html">Directory</a></li>
                   <li><button class="btn btn-default random" id = "random">Random</button></li>
 				  <!-- Create pdf function -->
                    <li><a href="help.html">Help</a></li>
@@ -165,8 +165,17 @@
 	</div>
 	<p class = "content2"><a href="lee.html">CONTENT</a> CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </p>
 
+
+<br><br><br>
+<div id="map">
+        <h2><span class="glyphicon glyphicon-fullscreen"></span>  Map</h2>
+        <!-- TODO: Use Leaflet.js to add a map showing Mt. Rainier's location
+                    http://leafletjs.com/examples/quick-start.html -->
+        <div id="map-container"></div>
+    </div>
 </div>
 <br><br><br>
+
 <div class = "content-footer">
 	<p>Related:</p>
 	<p class = "related">| Category1 |</p>
@@ -194,8 +203,8 @@
     </script>
 	
 	<script src="js/vendor/jquery-1.11.2.min.js"></script>
-    <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
     <script src="js/vendor/bootstrap.min.js"></script>
-
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
     <script src="js/main.js"></script>
 </html>
