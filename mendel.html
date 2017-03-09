@@ -182,7 +182,16 @@
 		<li><a href="mendel.html">Gregor Mendel</a></li>
 	</ul><br><br>
 </div>
-	
+<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately. -->
+<script>
+    var key = "draft",
+        contentEl = document.getElementById("mainBody");
+
+    contentEl.innerHTML = localStorage[key] || document.getElementById("mainBody").innerHTML;
+    contentEl.onkeyup=function() {
+        localStorage[key] = contentEl.innerHTML;
+    };
+</script>
 <br>
     
 
