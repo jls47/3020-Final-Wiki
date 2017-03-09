@@ -44,14 +44,14 @@
 
 @media only screen and (min-width: 1921px) {
     #mobileView {
-		display: none;
+		
     }
 
 	#desktopView{
 		display: none;
 	}
 	#tvView{
-		
+		display: none;
 	}
 	
 	body{
@@ -91,6 +91,7 @@
 	margin-right: 5%;
 	padding: 5px;
 	width: 300px;
+	margin-left: 10px;
 }
 
 .imagebox p{
@@ -106,7 +107,7 @@
 	background: lightgrey;
 	border: 1px solid lightblue;
 	padding: 7px;
-	width: 250px;
+	width: 344px;
 }
 
 .relatedArts{
@@ -116,9 +117,8 @@
 }
 
 .related{
-	background: darkgrey;
-	width: 83px;
-	
+	font-weight: bold;
+	font-style: italic;
 }
 
 .relatedArts li{
