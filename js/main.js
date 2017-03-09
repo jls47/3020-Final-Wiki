@@ -18,26 +18,35 @@ var login = false;
 	};
 	
 	$("#Login").click(function(){
-		//Fading out the login form.  Fancy!
-		$("#login").fadeOut();
-		//Setting the userinfo to come in right as the login form fades out.
-		setTimeout(function(){$(".user-info").fadeIn();}, 400);
-		//Setting the user info to the first and last name
-		$(".user-fullname").replaceWith(userInfo.firstName + " " + userInfo.lastName);
-		//Lastly, here's the boolean being changed.
-		login = true;
-		console.log(login);
+		if($("#email").val() == localStorage.getItem("user") && $("#pass").val() == localStorage.getItem("pass")){
+			//Fading out the login form.  Fancy!
+			$("#login").fadeOut();
+			//Setting the userinfo to come in right as the login form fades out.
+			setTimeout(function(){$(".user-info").fadeIn();}, 400);
+			//Setting the user info to the first and last name
+			$(".user-fullname").replaceWith(userInfo.firstName + " " + userInfo.lastName);
+			//Lastly, here's the boolean being changed.
+			login = true;
+		}else{
+			alert("Your login details don't seem to match up.  Make a change or create an account!")
+			return;
+		};
 	});
 	
 	$("#LoginD").click(function(){
-		//Fading out the login form.  Fancy!
-		$("#loginD").fadeOut();
-		//Setting the userinfo to come in right as the login form fades out.
-		setTimeout(function(){$(".user-info").fadeIn();}, 400);
-		//Setting the user info to the first and last name
-		$(".user-fullname").replaceWith(userInfo.firstName + " " + userInfo.lastName);
-		//Lastly, here's the boolean being changed.
-		login = true;
+		if($("#emailD").val() == localStorage.getItem("user") && $("#passD").val() == localStorage.getItem("pass")){
+			//Fading out the login form.  Fancy!
+			$("#loginD").fadeOut();
+			//Setting the userinfo to come in right as the login form fades out.
+			setTimeout(function(){$(".user-info").fadeIn();}, 400);
+			//Setting the user info to the first and last name
+			$(".user-fullname").replaceWith(localStorage.getItem("username"));
+			//Lastly, here's the boolean being changed.
+			login = true;
+		}else{
+			alert("Your login details don't seem to match up.  Make a change or create an account!")
+			return;
+		};
 	});
 	
 	//The logout function!
@@ -49,7 +58,7 @@ var login = false;
 		login = false;
 	});
 
-	//The logout function!
+	//The logout function, desktop version!
 	$("#LogoutD").click(function(){
 		//fading out the user info and fading in the login form right after.
 		$(".user-info").fadeOut();
@@ -85,10 +94,10 @@ var login = false;
 	});
 	
 	console.log(window.location.href);
-	
+	var href = ""
 	$(".talk").click(function(e) {
 		e.preventDefault();
-		var href = window.location.href.toString();
+		href = window.location.href.toString();
 		localStorage.setItem("href", href);
 		document.location.href="talk.html";
 	});
@@ -170,17 +179,17 @@ var login = false;
 		};
 		
 		if(tags.toLowerCase().includes("tim") || tags.toLowerCase().includes("berners") || tags.toLowerCase().includes("lee")){
-			location.replace("lee.html");
+			location.replace(site.bernerslee.href);
 		}else if(tags.toLowerCase().includes("marie") || tags.toLowerCase().includes("curie")){
-			location.replace("curie.html");
+			location.replace(site.curie.href);
 		}else if(tags.toLowerCase().includes("charles") || tags.toLowerCase().includes("darwin")){
-			location.replace("darwin.html");
+			location.replace(site.darwin.href);
 		}else if(tags.toLowerCase().includes("johannes") || tags.toLowerCase().includes("kepler")){
-			location.replace("kepler.html");
+			location.replace(site.kepler.href);
 		}else if(tags.toLowerCase().includes("gregor") || tags.toLowerCase().includes("mendel")){
-			location.replace("mendel.html");
+			location.replace(site.mendel.href);
 		}else if(tags.toLowerCase().includes("johnson") || tags.toLowerCase().includes("katherine")){
-			location.replace("johnson.html");
+			location.replace(site.johnson.href);
 		}else{
 			location.replace("dne.html");
 		};
@@ -215,7 +224,46 @@ var login = false;
 		} // End if
 	});
 	
+	$("#createacct").click(function(e){
+		e.preventDefault();
+		href = window.location.href.toString();
+		localStorage.setItem("href", href);
+		document.location.href="create.html";
+	});
 	
+	$("#createacctD").click(function(e){
+		e.preventDefault();
+		href = window.location.href.toString();
+		localStorage.setItem("href", href);
+		document.location.href="create.html";
+	});
+	
+	//Swiped this email validator regex from Stack Overflow http://stackoverflow.com/questions/46155/validate-email-address-in-javascript
+	function validateEmail(email) {
+		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(email);
+	}
+	
+	$("#create").click(function(){
+		var email = $("#Cuser").val();
+		var pass1 = $("#Cpass").val();
+		var pass2 = $("#Cpass2").val();
+		var handle = $("#handle").val();
+		if(validateEmail(email)){
+			if(pass1 == pass2){
+				localStorage.setItem("user", email);
+				localStorage.setItem("pass", pass1);
+				localStorage.setItem("username", handle);
+				document.location.href=localStorage.getItem("href");
+			}else{
+				alert("Your passwords don't match!  Try again?");
+				return;
+			};
+		}else{
+			alert("Your email address is looking a little weird there buddy.  Try again?");
+			return;
+		};
+	});
 	
 	
 	//ADDING THE MAPS

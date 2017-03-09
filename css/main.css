@@ -60,6 +60,11 @@
 	
 } 
 
+#desktopNavbar{
+	height: 150px;
+	width: 100%;
+	right: 100px;
+}
 
 .col-height{
 	height: 50px;
