@@ -179,7 +179,7 @@
     var key = "draft",
         contentEl = document.getElementById("mainTalk");
 
-    contentEl.innerHTML = localStorage[key] || document.getElementById("mainBody").innerHTML;
+    contentEl.innerHTML = localStorage[key] || document.getElementById("mainTalk").innerHTML;
     contentEl.onkeyup=function() {
         localStorage[key] = contentEl.innerHTML;
     };
