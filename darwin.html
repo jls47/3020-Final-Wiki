@@ -12,7 +12,6 @@
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
             body {
                 padding-top: 0px;
@@ -46,8 +45,8 @@
           <ul class="nav navbar-nav">
             
 			<!-- Use JQUERY upon login to generate a logout button -->
-            <li><button class="btn btn-default"><a href="talk.html">Talk</a></button></li>
-            <li><button class="btn btn-default" id = "random">Random</button></li>
+            <li><button class="btn btn-default"><a href="talk.html" class = "talk">Talk</a></button></li>
+            <li><button class="btn btn-default random" id = "random">Random</button></li>
 			<li><button class="btn btn-default"><a href="help.html">Help</a></button></li>
 			<li><button class="btn btn-default edit"><span class = "glyphicon glyphicon-pencil"></span></button></li>
 			<li>
@@ -63,10 +62,16 @@
 			
 			</li>
 		<li>	
-		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "Logout">Logout</a></div>
+		<div class="navbar-right user-info">Welcome, <span class="user-fullname">Username</span> <a class="btn btn-default btn-sm" id = "Logout">Logout</a></div>
           <form class="navbar-form navbar-right" role="form" id="login">
+			<div class="form-group">
+				<input type="text" placeholder="Email" class="form-control" id = "email">
+			</div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control" id = "pass">
+            </div>
             <a class="btn btn-default btn-sm" id = "Login">Login</a><br>
-			<a href="#createaccount">Create account</a>
+			<a href="create.html" id = "createacct">Create account</a>
           </form>
 		  </li>
           </ul>
@@ -83,22 +88,22 @@
 			</div>
 		</div>
 		
-		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "LogoutD">Logout</a></div>
+		<div class="navbar-right user-infoD">Welcome, <span class="user-fullname">Username</span> <a class="btn btn-default btn-sm" id = "LogoutD">Logout</a></div>
           <form class="navbar-form navbar-right" role="form" id="loginD">
+			<div class="form-group">
+				<input type="text" placeholder="Email" class="form-control" id = "emailD">
+			</div>
             <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+              <input type="password" placeholder="Password" class="form-control" id = "passD">
             </div>
             <a class="btn btn-default btn-sm" id = "LoginD">Login</a><br>
-			<a href="#createaccount">Create account</a>
+			<a href="create.html" id = "createacctD">Create account</a>
           </form>
 		
 		<div class = "navtabs">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#">Read</a></li>
-			<li><a href="talk.html">Talk</a></li>
+			<li><a href="talk.html" class = "talk">Talk</a></li>
 			<li><button class = " btn btn-default btn-sm editAll">Edit <span class = "glyphicon glyphicon-pencil"></span></button></li>
 		</ul>
 		
@@ -118,10 +123,8 @@
               
               	<ul class="nav nav-stacked" id="sidebar">
                   <li><a href="index.html">Main Page</a></li>
-                  <li><a href="dir.html">Directory</a></li>
+                  <li><a href="directory.html">Directory</a></li>
                   <li><button class="btn btn-default random" id = "random">Random</button></li>
-				  <!-- Create pdf function -->
-                   <li><button class="btn btn-default" id = "pdf">Download as PDF</button></li>
 				  <!-- Create help page -->
                    <li><a href="help.html">Help</a></li>
               	</ul>
@@ -131,7 +134,7 @@
 	</div>
 </div> 
 
-<div class = "container" id = "mainBody" contenteditable = "false">
+<div class = "container" id = "mainDar" contenteditable = "false">
 <h1>Charles Darwin</h1>
 <hr>
 <div class = "imagebox">
@@ -143,48 +146,47 @@
 <div class = "TOC">
 	<p>Table of Contents</p>
 	<ol>
-		<li><a>123123123</a></li>
-		<li><a>123123123</a></li>
+		<li><a href="#content1">Content1</a></li>
+		<li><a href = "#content2">Content2</a></li>
 	</ol>
 
 </div>
 
+
 <div class = "mainContent"><hr>
 	<h2 data-toggle="collapse" data-target=".content1" id = "mobileView">CONTENTHEADER</h2>
-	<h2 id = "desktopView">CONTENTHEADER1<button class = " btn btn-default btn-sm edit">Edit <span class = "glyphicon glyphicon-pencil"></span></button></h2><hr>
-	<p class = "content1">CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </p>
+	<h2 id = "desktopView">CONTENTHEADER1</h2><hr>
+	<p id = "content1">Donec non fringilla diam. Curabitur consectetur eu libero ut maximus. Suspendisse in odio in enim maximus congue. Vestibulum nec sollicitudin massa. Vestibulum ac volutpat metus, sed luctus turpis. Cras dapibus maximus nibh, ac interdum magna bibendum id. Duis vulputate massa ut purus pellentesque, eu lobortis enim suscipit. Curabitur at malesuada justo. Vivamus nec ex sit amet ipsum tincidunt lobortis eget ut massa. Pellentesque quis eros ut urna ullamcorper hendrerit ac sit amet velit. Ut id suscipit ligula. Praesent placerat, ex eget pretium porta, ante turpis rutrum lectus, quis vestibulum velit felis eget quam. Vestibulum ultricies eu orci eu volutpat. Proin ac mi est. Donec quam nisi, tempor non tempor et, auctor eu ipsum. Maecenas eget ipsum rhoncus, pharetra urna in, congue risus.</p>
 	<br>
 	<h2 data-toggle="collapse" data-target=".content2" id = "mobileView">CONTENTHEADER</h2>
-	<h2 id = "desktopView">CONTENTHEADER2<button class = " btn btn-default btn-sm edit">Edit <span class = "glyphicon glyphicon-pencil"></span></button></h2><hr>
+	<h2 id = "desktopView">CONTENTHEADER2</h2><hr>
 	<div class = "imagebox">
-		<p><div class = "mapbox"><iframe
-			width="290"
-			height="300"
-			frameborder="0" style="border:0"
-			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCC8spjvfLSkO96FHDlJfac1Yla9SRBWRc&q=Galapagos+Islands" allowfullscreen>
-		</iframe></div></p>
+		<p><div id="map-container"></div></p>
 		<p>The Galapagos Islands, where Darwin made his landmark discoveries and laid the foundations for the field of evolutionary biology.</p>
 	</div>
-	<p class = "content2"><a href="lee.html">CONTENT</a> CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </p>
+	<p id = "content2">Cras rhoncus, arcu et consequat venenatis, purus dui placerat libero, non fringilla urna enim vel erat. Quisque imperdiet justo ac efficitur porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque aliquet porttitor nisi, id luctus felis accumsan ac. Proin sed nulla condimentum, dignissim neque in, egestas mi. Vivamus blandit diam vitae molestie venenatis. Nullam fermentum ligula quis ultrices molestie. Mauris non volutpat tortor. Donec hendrerit tempus purus, vel pulvinar dolor lacinia in. Integer semper at ex at accumsan. Quisque eu porttitor ipsum. Donec gravida ac nisi id lacinia. Donec tempor tellus eu vestibulum accumsan. Pellentesque magna urna, lobortis quis ultricies quis, viverra eu sem. Phasellus eget suscipit metus, id molestie diam.</p>
 
 </div>
 <br><br><br>
 <div class = "content-footer">
 	<p>Related:</p>
-	<p class = "related">| Category1 |</p>
+	<p class = "related">Biologists</p>
 	<ul class = "relatedArts">
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
+		<li><a rhef="darwin.html">Charles Darwin</a></li>
+		<li><a href="mendel.html">Gregor Mendel</a></li>
 	</ul><br><br>
-	<p class = "related">| Category2 |</p>
-	<ul class = "relatedArts">
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-	</ul>
 </div>
 </div>
+<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately.
+<script>
+    var Dar = "draft",
+        contentDa = document.getElementById("mainDar");
+
+    contentDa.innerHTML = localStorage[Dar] || document.getElementById("mainDar").innerHTML;
+    contentDa.onDarup=function() {
+        localStorage[Dar] = contentDar.innerHTML;
+    };
+</script>  -->
 <br>
     
 
@@ -198,6 +200,6 @@
 	<script src="js/vendor/jquery-1.11.2.min.js"></script>
     <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
     <script src="js/vendor/bootstrap.min.js"></script>
-
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
     <script src="js/main.js"></script>
 </html>

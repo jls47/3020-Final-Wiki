@@ -63,10 +63,16 @@
 			
 			</li>
 		<li>	
-		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "Logout">Logout</a></div>
+		<div class="navbar-right user-info">Welcome, <span class="user-fullname">Username</span> <a class="btn btn-default btn-sm" id = "Logout">Logout</a></div>
           <form class="navbar-form navbar-right" role="form" id="login">
+			<div class="form-group">
+				<input type="text" placeholder="Email" class="form-control" id = "email">
+			</div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control" id = "pass">
+            </div>
             <a class="btn btn-default btn-sm" id = "Login">Login</a><br>
-			<a href="#createaccount">Create account</a>
+			<a href="create.html" id = "createacct">Create account</a>
           </form>
 		  </li>
           </ul>
@@ -83,22 +89,22 @@
 			</div>
 		</div>
 		
-		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "LogoutD">Logout</a></div>
+		<div class="navbar-right user-infoD">Welcome, <span class="user-fullname">Username</span> <a class="btn btn-default btn-sm" id = "LogoutD">Logout</a></div>
           <form class="navbar-form navbar-right" role="form" id="loginD">
+			<div class="form-group">
+				<input type="text" placeholder="Email" class="form-control" id = "emailD">
+			</div>
             <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+              <input type="password" placeholder="Password" class="form-control" id = "passD">
             </div>
             <a class="btn btn-default btn-sm" id = "LoginD">Login</a><br>
-			<a href="#createaccount">Create account</a>
+			<a href="create.html" id = "createacct">Create account</a>
           </form>
 		
 		<div class = "navtabs">
 		<ul class="nav nav-tabs">
-			<li class="active"><a href="#">Read</a></li>
-			<li><a href="#">Talk</a></li>
+			<li><a href="#" class = "read">Read</a></li>
+			<li class = "active"><a href="#">Talk</a></li>
 			<li><button class = " btn btn-default btn-sm editAll">Edit <span class = "glyphicon glyphicon-pencil"></span></button></li>
 		</ul>
 		
@@ -118,10 +124,8 @@
               
               	<ul class="nav nav-stacked" id="sidebar">
                   <li><a href="index.html">Main Page</a></li>
-                  <li><a href="dir.html">Directory</a></li>
+                  <li><a href="directory.html">Directory</a></li>
                   <li><button class="btn btn-default random" id = "random">Random</button></li>
-				  <!-- Create pdf function -->
-                   <li><button class="btn btn-default" id = "pdf">Download as PDF</button></li>
 				  <!-- Create help page -->
                    <li><a href="help.html">Help</a></li>
               	</ul>
@@ -131,7 +135,7 @@
 	</div>
 </div> 
 
-<div class = "container" id = "mainBody" contenteditable = "false";>
+<div class = "container" id = "mainTalk" contenteditable = "false";>
 <h1>DISCUSSIONS</h1>
 <hr>
 <div class = "imagebox">
@@ -143,43 +147,46 @@
 <div class = "TOC">
 	<p>Table of Contents</p>
 	<ol>
-		<li><a>123123123</a></li>
-		<li><a>123123123</a></li>
+		<li><a href="#curie">123123123</a></li>
+		<li><a href="#darwin">123123123</a></li>
+		<li><a href="#johnson">123123123</a></li>
+		<li><a href="#kepler">123123123</a></li>
+		<li><a href="#lee">123123123</a></li>
+		<li><a href="#mendel">123123123</a></li>
 	</ol>
 
 </div>
 
 <div class = "mainContent"><hr>
-	<h2>RE: Marie Curie</h2>
+	<h2 id = "curie">RE: Marie Curie</h2>
 	<p>Start the conversation?</p><br><br><br><br><br><br><br><br>
-	<h2>RE: Charles Darwin</h2>
+	<h2 id = "darwin">RE: Charles Darwin</h2>
 	<p>Start the conversation?</p><br><br><br><br><br><br><br><br>
-	<h2>RE: Johannes Kepler</h2>
+	<h2 id = "johnson">RE: Katherine Johnson</h2>
 	<p>Start the conversation?</p><br><br><br><br><br><br><br><br>
-	<h2>RE: Tim Berners-Lee</h2>
+	<h2 id = "kepler">RE: Johannes Kepler</h2>
 	<p>Start the conversation?</p><br><br><br><br><br><br><br><br>
-	<h2>RE: Gregor Mendel</h2>
+	<h2 id = "lee">RE: Tim Berners-Lee</h2>
+	<p>Start the conversation?</p><br><br><br><br><br><br><br><br>
+	<h2 id = "mendel">RE: Gregor Mendel</h2>
 	<p>Start the conversation?</p><br><br><br><br><br><br><br><br>
 
+
 </div>
+
+<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately. -->
+<script>
+    var key = "draft",
+        contentEl = document.getElementById("mainTalk");
+
+    contentEl.innerHTML = localStorage[key] || document.getElementById("mainTalk").innerHTML;
+    contentEl.onkeyup=function() {
+        localStorage[key] = contentEl.innerHTML;
+    };
+</script>
+
 <br><br><br>
-<div class = "content-footer">
-	<p>Related:</p>
-	<p class = "related">| Category1 |</p>
-	<ul class = "relatedArts">
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-	</ul><br><br>
-	<p class = "related">| Category2 |</p>
-	<ul class = "relatedArts">
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-	</ul>
-</div>
-</div>
-<br>
+
     
 
 	(c) JLS 2017

@@ -46,8 +46,8 @@
           <ul class="nav navbar-nav">
             
 			<!-- Use JQUERY upon login to generate a logout button -->
-            <li><button class="btn btn-default"><a href="talk.html">Talk</a></button></li>
-            <li><button class="btn btn-default" id = "random">Random</button></li>
+            <li><button class="btn btn-default"><a href="talk.html" class = "talk">Talk</a></button></li>
+            <li><button class="btn btn-default random" id = "random">Random</button></li>
 			<li><button class="btn btn-default"><a href="help.html">Help</a></button></li>
 			<li><button class="btn btn-default edit"><span class = "glyphicon glyphicon-pencil"></span></button></li>
 			<li>
@@ -63,10 +63,16 @@
 			
 			</li>
 		<li>	
-		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "Logout">Logout</a></div>
+		<div class="navbar-right user-info">Welcome, <span class="user-fullname">Username</span> <a class="btn btn-default btn-sm" id = "Logout">Logout</a></div>
           <form class="navbar-form navbar-right" role="form" id="login">
+			<div class="form-group">
+				<input type="text" placeholder="Email" class="form-control" id = "email">
+			</div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control" id = "pass">
+            </div>
             <a class="btn btn-default btn-sm" id = "Login">Login</a><br>
-			<a href="#createaccount">Create account</a>
+			<a href="create.html" id = "createacct">Create account</a>
           </form>
 		  </li>
           </ul>
@@ -83,22 +89,22 @@
 			</div>
 		</div>
 		
-		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "LogoutD">Logout</a></div>
+		<div class="navbar-right user-infoD">Welcome, <span class="user-fullname">Username</span> <a class="btn btn-default btn-sm" id = "LogoutD">Logout</a></div>
           <form class="navbar-form navbar-right" role="form" id="loginD">
+			<div class="form-group">
+				<input type="text" placeholder="Email" class="form-control" id = "emailD">
+			</div>
             <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+              <input type="password" placeholder="Password" class="form-control" id = "passD">
             </div>
             <a class="btn btn-default btn-sm" id = "LoginD">Login</a><br>
-			<a href="#createaccount">Create account</a>
+			<a href="create.html" id = "createacctD">Create account</a>
           </form>
 		
 		<div class = "navtabs">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#">Read</a></li>
-			<li><a href="talk.html">Talk</a></li>
+			<li><a href="talk.html" class = "talk">Talk</a></li>
 			<li><button class = " btn btn-default btn-sm editAll">Edit <span class = "glyphicon glyphicon-pencil"></span></button></li>
 		</ul>
 		
@@ -118,10 +124,8 @@
               
               	<ul class="nav nav-stacked" id="sidebar">
                   <li><a href="index.html">Main Page</a></li>
-                  <li><a href="dir.html">Directory</a></li>
+                  <li><a href="directory.html">Directory</a></li>
                   <li><button class="btn btn-default random" id = "random">Random</button></li>
-				  <!-- Create pdf function -->
-                   <li><button class="btn btn-default" id = "pdf">Download as PDF</button></li>
 				  <!-- Create help page -->
                    <li><a href="help.html">Help</a></li>
               	</ul>
@@ -131,7 +135,7 @@
 	</div>
 </div> 
 
-<div class = "container" id = "mainBody" contenteditable = false;>
+<div class = "container" id = "mainCur" contenteditable = false;>
 <h1>Marie Curie</h1>
 <hr>
 <div class = "imagebox">
@@ -143,48 +147,58 @@
 <div class = "TOC">
 	<p>Table of Contents</p>
 	<ol>
-		<li><a>123123123</a></li>
-		<li><a>123123123</a></li>
+		<li><a href="#content1">Content1</a></li>
+		<li><a href = "#content2">Content2</a></li>
 	</ol>
 
 </div>
 
+
 <div class = "mainContent"><hr>
 	<h2 data-toggle="collapse" data-target=".content1" id = "mobileView">CONTENTHEADER</h2>
 	<h2 id = "desktopView">CONTENTHEADER1</h2><hr>
-	<p class = "content1">CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </p>
+	<p class = "content1">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus congue tempor erat ut aliquam. Ut quis libero eget velit posuere condimentum in pellentesque sapien. Nullam et augue mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin mattis purus a enim finibus, id rhoncus leo hendrerit. Sed vitae elit id erat varius consectetur in nec dui. Phasellus et tortor ac nisl sollicitudin cursus. Phasellus turpis neque, rhoncus auctor augue vel, tincidunt volutpat nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Etiam maximus volutpat purus, sit amet convallis magna blandit ornare.</p>
 	<br>
 	<h2 data-toggle="collapse" data-target=".content2" id = "mobileView">CONTENTHEADER</h2>
 	<h2 id = "desktopView">CONTENTHEADER2</h2><hr>
 	<div class = "imagebox">
 		<p><div class = "mapbox"><iframe
-			width="290"
+			width="288"
 			height="300"
 			frameborder="0" style="border:0"
 			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCC8spjvfLSkO96FHDlJfac1Yla9SRBWRc&q=Curie+Museum,Paris" allowfullscreen>
 		</iframe></div></p>
 		<p>The museum erected in memoriam of Curie, with some of her equipment and notes preserved for future generations, not far from where she originally did her work.</p>
 	</div>
-	<p class = "content2"><a href="lee.html">CONTENT</a> CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </p>
+	<p class = "content2">Mauris tincidunt tempor dui a vehicula. Mauris nulla mi, rutrum eget faucibus in, sagittis sit amet justo. Suspendisse tincidunt, elit placerat vestibulum tincidunt, leo sapien consectetur velit, ut elementum leo risus posuere mauris. Fusce viverra mi ut ipsum euismod, ut tristique eros ullamcorper. Nunc et purus nec libero porttitor viverra nec vitae erat. Sed eleifend ac nulla in accumsan. Duis sem lectus, ultricies quis enim vitae, egestas lacinia dui. Donec eget euismod eros. Ut suscipit ligula eget est condimentum, a vestibulum erat pulvinar. Fusce in diam malesuada, scelerisque erat eu, gravida diam. Fusce aliquet, felis eget auctor imperdiet, mi nisi venenatis mauris, eu vehicula nisl mauris lobortis ligula.</p>
 
 </div>
 <br><br><br>
-<div class = "content-footer">
+<div class = "content-footer" id = "footer">
 	<p>Related:</p>
-	<p class = "related">| Category1 |</p>
+	<p class = "related">Chemists</p>
 	<ul class = "relatedArts">
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
+		<li><a href="curie.html">Marie Curie</a></li>
 	</ul><br><br>
-	<p class = "related">| Category2 |</p>
+	<p class = "related">Physicists</p>
 	<ul class = "relatedArts">
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
+		<li><a href="curie.html">Marie Curie</a></li>
+		<li><a href="johnson.html">Katherine Johnson</a></li>
+		<li><a href="kepler.html">Johannes Kepler</a></li>
 	</ul>
 </div>
 </div>
+<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately. 
+<script>
+    var Cur = "draft",
+        contentCu = document.getElementById("mainCur");
+
+    contentCu.innerHTML = localStorage[Cur] || document.getElementById("mainCur").innerHTML;
+    contentCu.onCurup=function() {
+        localStorage[Cur] = contentCu.innerHTML;
+    };
+</script>  -->
 <br>
     
 

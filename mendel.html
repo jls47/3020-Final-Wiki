@@ -46,8 +46,8 @@
           <ul class="nav navbar-nav">
             
 			<!-- Use JQUERY upon login to generate a logout button -->
-            <li><button class="btn btn-default"><a href="talk.html">Talk</a></button></li>
-            <li><button class="btn btn-default" id = "random">Random</button></li>
+            <li><button class="btn btn-default"><a href="talk.html" class = "talk">Talk</a></button></li>
+            <li><button class="btn btn-default random" id = "random">Random</button></li>
 			<li><button class="btn btn-default"><a href="help.html">Help</a></button></li>
 			<li><button class="btn btn-default editAll"><span class = "glyphicon glyphicon-pencil"></span></button></li>
 			<li>
@@ -63,10 +63,16 @@
 			
 			</li>
 		<li>	
-		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "Logout">Logout</a></div>
+		<div class="navbar-right user-info">Welcome, <span class="user-fullname">Username</span> <a class="btn btn-default btn-sm" id = "Logout">Logout</a></div>
           <form class="navbar-form navbar-right" role="form" id="login">
+			<div class="form-group">
+				<input type="text" placeholder="Email" class="form-control" id = "email">
+			</div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control" id = "pass">
+            </div>
             <a class="btn btn-default btn-sm" id = "Login">Login</a><br>
-			<a href="#createaccount">Create account</a>
+			<a href="create.html" id = "createacct">Create account</a>
           </form>
 		  </li>
           </ul>
@@ -83,22 +89,22 @@
 			</div>
 		</div>
 		
-		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "LogoutD">Logout</a></div>
+		<div class="navbar-right user-infoD">Welcome, <span class="user-fullname">Username</span> <a class="btn btn-default btn-sm" id = "LogoutD">Logout</a></div>
           <form class="navbar-form navbar-right" role="form" id="loginD">
+			<div class="form-group">
+				<input type="text" placeholder="Email" class="form-control" id = "emailD">
+			</div>
             <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+              <input type="password" placeholder="Password" class="form-control" id = "passD">
             </div>
             <a class="btn btn-default btn-sm" id = "LoginD">Login</a><br>
-			<a href="#createaccount">Create account</a>
+			<a href="create.html" id = "createacctD">Create account</a>
           </form>
 		
 		<div class = "navtabs">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#">Read</a></li>
-			<li><a href="talk.html">Talk</a></li>
+			<li><a href="talk.html" class = "talk">Talk</a></li>
 			<li><button class = " btn btn-default btn-sm editAll">Edit <span class = "glyphicon glyphicon-pencil"></span></button></li>
 		</ul>
 		
@@ -118,10 +124,8 @@
               
               	<ul class="nav nav-stacked" id="sidebar">
                   <li><a href="index.html">Main Page</a></li>
-                  <li><a href="dir.html">Directory</a></li>
+                  <li><a href="directory.html">Directory</a></li>
                   <li><button class="btn btn-default random" id = "random">Random</button></li>
-				  <!-- Create pdf function -->
-                   <li><button class="btn btn-default" id = "pdf">Download as PDF</button></li>
 				  <!-- Create help page -->
                    <li><a href="help.html">Help</a></li>
               	</ul>
@@ -143,48 +147,51 @@
 <div class = "TOC">
 	<p>Table of Contents</p>
 	<ol>
-		<li><a>123123123</a></li>
-		<li><a>123123123</a></li>
+		<li><a href="#content1">Content1</a></li>
+		<li><a href = "#content2">Content2</a></li>
 	</ol>
 
 </div>
 
-<div class = "mainContent"><hr>
+
+<div class = "mainMend"><hr>
 	<h2 data-toggle="collapse" data-target=".content1" id = "mobileView">CONTENTHEADER</h2>
 	<h2 id = "desktopView">CONTENTHEADER1</h2><hr>
-	<p class = "content1">CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </p>
+	<p id = "content1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a sollicitudin enim, quis placerat tortor. Etiam dictum vitae risus sed vulputate. Nullam scelerisque lectus id diam finibus bibendum. Phasellus quis massa augue. Sed interdum purus vel lorem placerat, at mollis augue malesuada. Morbi sagittis eros velit, nec accumsan mauris placerat vel. Curabitur sit amet neque interdum orci maximus fermentum. Aenean at ex vel sapien semper egestas et ac libero. Praesent euismod interdum mi, vel semper nisl dictum non. Vestibulum vitae enim eu sem rutrum suscipit ut sit amet neque. Nullam rutrum neque vitae scelerisque vestibulum. Cras vehicula lacus in ipsum commodo maximus. Ut a condimentum justo, non congue nisl. Vestibulum volutpat ipsum ut convallis semper. Sed in semper nunc, imperdiet iaculis ante.</p>
 	<br>
 	<h2 data-toggle="collapse" data-target=".content2" id = "mobileView">CONTENTHEADER</h2>
 	<h2 id = "desktopView">CONTENTHEADER2</h2><hr>
 	<div class = "imagebox">
 		<p><div class = "mapbox"><iframe
-			width="290"
+			width="288"
 			height="300"
 			frameborder="0" style="border:0"
 			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCC8spjvfLSkO96FHDlJfac1Yla9SRBWRc&q=Church+Of+St.+Thomas,Brno" allowfullscreen>
 		</iframe></div></p>
 		<p>The former Abbey of St. Thomas, where Mendel discovered the principal ideas of genetics.</p>
 	</div>
-	<p class = "content2"><a href="lee.html">CONTENT</a> CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </p>
+	<p id = "content2"><a href="lee.html">Vestibulum eros justo, porta et ultrices ac, porttitor ac sapien. In hac habitasse platea dictumst. Suspendisse eget ante quis tortor dapibus fermentum. Vivamus vitae volutpat velit. Aliquam blandit, erat at consectetur dignissim, metus nulla blandit nulla, bibendum tristique risus lacus et nisl. Nulla sodales lorem vel tincidunt tincidunt. Sed eu fermentum ex. In nec ipsum aliquet, viverra tortor a, congue risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus vehicula tristique rutrum. Nam vulputate tincidunt suscipit. Mauris suscipit venenatis egestas. Vestibulum et viverra erat, eu fringilla diam. Vestibulum et tincidunt erat. Nullam in magna eget nulla pellentesque aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
 
 </div>
 <br><br><br>
 <div class = "content-footer">
 	<p>Related:</p>
-	<p class = "related">| Category1 |</p>
-	<ul class = "relatedArts">
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
+	<p class = "related">Biologists</p>
+	<ul class = "Biologists">
+		<li><a href="darwin.html">Charles Darwin</a></li>
+		<li><a href="mendel.html">Gregor Mendel</a></li>
 	</ul><br><br>
-	<p class = "related">| Category2 |</p>
-	<ul class = "relatedArts">
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-	</ul>
 </div>
-	
+<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately. 
+<script>
+    var Men = "draft",
+        contentme = document.getElementById("mainMend");
+
+    contentMe.innerHTML = localStorage[Men] || document.getElementById("mainMend").innerHTML;
+    contentMe.onMenup=function() {
+        localStorage[Men] = contentMe.innerHTML;
+    };
+</script> -->
 <br>
     
 
@@ -198,6 +205,6 @@
 	<script src="js/vendor/jquery-1.11.2.min.js"></script>
     <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
     <script src="js/vendor/bootstrap.min.js"></script>
-
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
     <script src="js/main.js"></script>
 </html>

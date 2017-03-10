@@ -20,8 +20,8 @@
             }
         </style>
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
         <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 		
@@ -46,8 +46,8 @@
           <ul class="nav navbar-nav">
             
 			<!-- Use JQUERY upon login to generate a logout button -->
-            <li><button class="btn btn-default"><a href="talk.html">Talk</a></button></li>
-            <li><button class="btn btn-default" id = "random">Random</button></li>
+            <li><button class="btn btn-default"><a href="talk.html" class = "talk">Talk</a></button></li>
+            <li><button class="btn btn-default random" id = "random">Random</button></li>
 			<li><button class="btn btn-default"><a href="help.html">Help</a></button></li>
 			<li><button class="btn btn-default edit"><span class = "glyphicon glyphicon-pencil"></span></button></li>
 			<li>
@@ -63,10 +63,16 @@
 			
 			</li>
 		<li>	
-		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "Logout">Logout</a></div>
+		<div class="navbar-right user-info">Welcome, <span class="user-fullname">Username</span> <a class="btn btn-default btn-sm" id = "Logout">Logout</a></div>
           <form class="navbar-form navbar-right" role="form" id="login">
+			<div class="form-group">
+				<input type="text" placeholder="Email" class="form-control" id = "email">
+			</div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control" id = "pass">
+            </div>
             <a class="btn btn-default btn-sm" id = "Login">Login</a><br>
-			<a href="#createaccount">Create account</a>
+			<a href="create.html" id = "createacct">Create account</a>
           </form>
 		  </li>
           </ul>
@@ -83,22 +89,22 @@
 			</div>
 		</div>
 		
-		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "LogoutD">Logout</a></div>
+		<div class="navbar-right user-infoD">Welcome, <span class="user-fullname">Username</span> <a class="btn btn-default btn-sm" id = "LogoutD">Logout</a></div>
           <form class="navbar-form navbar-right" role="form" id="loginD">
+			<div class="form-group">
+				<input type="text" placeholder="Email" class="form-control" id = "emailD">
+			</div>
             <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+              <input type="password" placeholder="Password" class="form-control" id = "passD">
             </div>
             <a class="btn btn-default btn-sm" id = "LoginD">Login</a><br>
-			<a href="#createaccount">Create account</a>
+			<a href="create.html" id = "createacctD">Create account</a>
           </form>
-		
+		  
 		<div class = "navtabs">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#">Read</a></li>
-			<li><a href="talk.html">Talk</a></li>
+			<li><a href="talk.html" class = "talk">Talk</a></li>
 			<li><button class = " btn btn-default btn-sm editAll">Edit <span class = "glyphicon glyphicon-pencil"></span></button></li>
 		</ul>
 		
@@ -118,11 +124,9 @@
               
               	<ul class="nav nav-stacked" id="sidebar">
                   <li><a href="index.html">Main Page</a></li>
-                  <li><a href="dir.html">Directory</a></li>
+                  <li><a href="directory.html">Directory</a></li>
                   <li><button class="btn btn-default random" id = "random">Random</button></li>
 				  <!-- Create pdf function -->
-                   <li><button class="btn btn-default" id = "pdf">Download as PDF</button></li>
-				  <!-- Create help page -->
                    <li><a href="help.html">Help</a></li>
               	</ul>
               
@@ -131,7 +135,7 @@
 	</div>
 </div> 
 
-<div class = "container" id = "mainBody" contenteditable = "false">
+<div class = "container" id = "mainKep" contenteditable = "false">
 <h1>Johannes Kepler</h1>
 <hr>
 <div class = "imagebox">
@@ -143,51 +147,67 @@
 <div class = "TOC">
 	<p>Table of Contents</p>
 	<ol>
-		<li><a>123123123</a></li>
-		<li><a>123123123</a></li>
+		<li><a href="#content1">123123123</a></li>
+		<li><a href="#content2">123123123</a></li>
+		<li><a href="#content3">123123123</a></li>
 	</ol>
 
 </div>
 
 <div class = "mainContent"><hr>
-	<h2 data-toggle="collapse" data-target=".content1" id = "mobileView">CONTENTHEADER</h2>
+	<h2 data-toggle="collapse" data-target="#content1" id = "mobileView">CONTENTHEADER</h2>
 	<h2 id = "desktopView">CONTENTHEADER1</h2><hr>
-	<p class = "content1">CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </p>
+	<p id = "content1">Duis feugiat, ligula sit amet laoreet tempor, urna nisl ullamcorper velit, quis commodo tortor dolor vel elit. Aenean condimentum mauris quis erat tristique vehicula. Donec nec tellus sed felis rhoncus commodo ut eu eros. Mauris tincidunt ex orci, nec tempor nulla consectetur nec. Nam aliquet, massa id scelerisque ultrices, leo ex consequat diam, vel rutrum felis neque id massa. Etiam at porttitor risus. Maecenas sed nibh at metus egestas mollis ut et arcu. Suspendisse potenti. Fusce tincidunt sapien lobortis faucibus consequat. Integer dignissim, velit sit amet tristique sagittis, sem ante auctor erat, et auctor erat purus ac turpis. Curabitur pulvinar sodales augue, vel pretium ligula mollis at. Pellentesque pellentesque dictum egestas. Pellentesque in auctor tellus, quis tristique ex. Proin at leo vel nunc convallis tincidunt quis et eros.</p>
 	<br>
-	<h2 data-toggle="collapse" data-target=".content2" id = "mobileView">CONTENTHEADER</h2>
+	<h2 data-toggle="collapse" data-target="#content2" id = "mobileView">CONTENTHEADER</h2>
 	<h2 id = "desktopView">CONTENTHEADER2</h2><hr>
 	<div class = "imagebox">
 		<p><div class = "mapbox"><iframe
 			width="290"
 			height="300"
 			frameborder="0" style="border:0"
-			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCC8spjvfLSkO96FHDlJfac1Yla9SRBWRc&q=Benátky+nad+Jizerou,Czechia" allowfullscreen>
+			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCC8spjvfLSkO96FHDlJfac1Yla9SRBWRc&q=Benátky+Nad+Jizerou,Czechia" allowfullscreen>
 		</iframe></div></p>
 		<p>The town formerly known as Benatky, site of Tycho Brahe's observatory and where Kepler did some of his most important research.</p>
 	</div>
-	<p class = "content2"><a href="lee.html">CONTENT</a> CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT </p>
+	<p id = "content2">Maecenas at semper mauris. Praesent fermentum rhoncus erat, sit amet fringilla sem finibus eget. Maecenas feugiat nisi sit amet lacus aliquet lobortis. Nunc hendrerit ligula faucibus ante accumsan, porta egestas felis molestie. Quisque urna urna, varius sed consectetur tempor, luctus in diam. Morbi molestie dictum mollis. Aenean purus augue, placerat malesuada accumsan consectetur, bibendum id eros. Cras pulvinar finibus commodo. Phasellus lorem lacus, malesuada ac tempor in, luctus consequat augue. Phasellus at consequat lacus, non mattis justo. Pellentesque consectetur, augue at fringilla placerat, tortor ligula blandit ipsum, id malesuada lorem justo et nibh. Curabitur posuere condimentum tellus quis feugiat.</p>
+	<br>
+	<h2 data-toggle="collapse" data-target="#content3" id = "mobileView">CONTENTHEADER</h2>
+	<h2 id = "desktopView">CONTENTHEADER3</h2><hr>
+	<p id = "content3">Maecenas pretium lacinia erat, ut tristique nisi aliquam in. Nam volutpat elit quis tellus ornare, vitae vulputate erat faucibus. Aenean auctor neque sit amet nulla tempor aliquam. Quisque hendrerit malesuada sapien quis consequat. Nunc maximus dapibus ligula, commodo mollis lorem semper quis. Cras accumsan eu diam at auctor. Sed finibus euismod nibh, vel pharetra tortor iaculis vel. Aliquam ex erat, commodo et dictum vel, dapibus vel dui. Praesent vestibulum cursus fermentum. Suspendisse elementum volutpat lectus vel iaculis. Etiam nec tempor leo, nec gravida urna. Nam in ex eu eros vulputate laoreet. Pellentesque velit dui, ultricies a convallis sit amet, accumsan non libero. Nunc placerat varius ex, nec ultricies metus mollis non. Nunc feugiat purus eu justo bibendum, vitae semper arcu mattis.</p>
+	<br>
 
-</div>
 <br><br><br>
+
+
 <div class = "content-footer">
 	<p>Related:</p>
-	<p class = "related">| Category1 |</p>
+	<p class = "related">Mathematicians</p>
 	<ul class = "relatedArts">
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-	</ul><br><br>
-	<p class = "related">| Category2 |</p>
+		<li><a href="johnson.html">Katherine Johnson</a></li>
+		<li><a href="kepler.html">Johannes Kepler</a></li>
+	</ul><br><br><br>
+	<p class = "related">Physicists</p>
 	<ul class = "relatedArts">
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
-		<li>EXAMPLE</li>
+		<li><a href="curie.html">Marie Curie</a></li>
+		<li><a href="johnson.html">Katherine Johnson</a></li>
+		<li><a href="kepler.html">Johannes Kepler</a></li>
 	</ul>
 </div>
-	
-<br>
+
     
 </div>
+<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately.
+<script>
+    var Kep = "draft",
+        contentKe = document.getElementById("mainKep");
+
+    contentKe.innerHTML = localStorage[Kep] || document.getElementById("mainKep").innerHTML;
+    contentKe.onKepup=function() {
+        localStorage[Kep] = contentKe.innerHTML;
+    };
+</script>  -->
+<br>
 	(c) JLS 2017
     </body>
 	
@@ -196,8 +216,8 @@
     </script>
 	
 	<script src="js/vendor/jquery-1.11.2.min.js"></script>
-    <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
     <script src="js/vendor/bootstrap.min.js"></script>
-
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
     <script src="js/main.js"></script>
 </html>
