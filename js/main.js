@@ -2,21 +2,26 @@
 $(document).ready(function(){
 
 //Table of contents generator
-var login = false;
-
-	var userInfo = {
-        firstName: 'Jerry',
-        lastName: 'Brown'
-    };
-	
-	if(login == false){
-		$(".login").css("display", "default");
-		$(".user-info").css("display", "none");
-	}else{
-		$(".login").css("display", "none");
-		$(".user-info").css("display", "default");
+	if(!localStorage.getItem("login")){
+		localStorage.setItem("login", "false");
+		console.log("nologin");
 	};
-	
+
+	if(localStorage.getItem("login") === "false"){
+		$("#login").css("display", "default");
+		$(".user-info").css("display", "none");
+		$("#loginD").css("display", "default");
+		$(".user-infoD").css("display", "none");
+		console.log("1");
+	}else if(localStorage.getItem("login") === "true"){
+		$("#login").css("display", "none");
+		$(".user-info").css("display", "default");
+		$("#loginD").css("display", "none");
+		$(".user-infoD").css("display", "default");
+		$(".user-fullname").replaceWith(localStorage.getItem("username"));
+		console.log("2");
+	};
+
 	$("#Login").click(function(){
 		if($("#email").val() == localStorage.getItem("user") && $("#pass").val() == localStorage.getItem("pass")){
 			//Fading out the login form.  Fancy!
@@ -24,9 +29,9 @@ var login = false;
 			//Setting the userinfo to come in right as the login form fades out.
 			setTimeout(function(){$(".user-info").fadeIn();}, 400);
 			//Setting the user info to the first and last name
-			$(".user-fullname").replaceWith(userInfo.firstName + " " + userInfo.lastName);
+			$(".user-fullname").replaceWith(localStorage.getItem("username"));
 			//Lastly, here's the boolean being changed.
-			login = true;
+			localStorage.setItem("login", "true");
 		}else{
 			alert("Your login details don't seem to match up.  Make a change or create an account!")
 			return;
@@ -38,11 +43,11 @@ var login = false;
 			//Fading out the login form.  Fancy!
 			$("#loginD").fadeOut();
 			//Setting the userinfo to come in right as the login form fades out.
-			setTimeout(function(){$(".user-info").fadeIn();}, 400);
+			setTimeout(function(){$(".user-infoD").fadeIn();}, 400);
 			//Setting the user info to the first and last name
 			$(".user-fullname").replaceWith(localStorage.getItem("username"));
 			//Lastly, here's the boolean being changed.
-			login = true;
+			localStorage.setItem("login", "true");
 		}else{
 			alert("Your login details don't seem to match up.  Make a change or create an account!")
 			return;
@@ -55,16 +60,16 @@ var login = false;
 		$(".user-info").fadeOut();
 		setTimeout(function(){$("#login").fadeIn();}, 400);
 		//booleans!
-		login = false;
+		localStorage.setItem("login", "false");
 	});
 
 	//The logout function, desktop version!
 	$("#LogoutD").click(function(){
 		//fading out the user info and fading in the login form right after.
-		$(".user-info").fadeOut();
+		$(".user-infoD").fadeOut();
 		setTimeout(function(){$("#loginD").fadeIn();}, 400);
 		//booleans!
-		login = false;
+		localStorage.setItem("login", "false");
 	});
 
 	$("#expand").click(function() {
