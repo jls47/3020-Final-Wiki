@@ -135,7 +135,7 @@
 	</div>
 </div> 
 
-<div class = "container" id = "mainBody" contenteditable = "false">
+<div class = "container" id = "mainKep" contenteditable = "false">
 <h1>Johannes Kepler</h1>
 <hr>
 <div class = "imagebox">
@@ -197,6 +197,17 @@
 
     
 </div>
+<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately. -->
+<script>
+    var key = "draft",
+        contentEl = document.getElementById("mainKep");
+
+    contentEl.innerHTML = localStorage[key] || document.getElementById("mainBody").innerHTML;
+    contentEl.onkeyup=function() {
+        localStorage[key] = contentEl.innerHTML;
+    };
+</script>
+<br>
 	(c) JLS 2017
     </body>
 	

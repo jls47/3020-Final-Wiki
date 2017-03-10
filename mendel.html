@@ -154,7 +154,7 @@
 </div>
 
 
-<div class = "mainContent"><hr>
+<div class = "mainMend"><hr>
 	<h2 data-toggle="collapse" data-target=".content1" id = "mobileView">CONTENTHEADER</h2>
 	<h2 id = "desktopView">CONTENTHEADER1</h2><hr>
 	<p id = "content1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a sollicitudin enim, quis placerat tortor. Etiam dictum vitae risus sed vulputate. Nullam scelerisque lectus id diam finibus bibendum. Phasellus quis massa augue. Sed interdum purus vel lorem placerat, at mollis augue malesuada. Morbi sagittis eros velit, nec accumsan mauris placerat vel. Curabitur sit amet neque interdum orci maximus fermentum. Aenean at ex vel sapien semper egestas et ac libero. Praesent euismod interdum mi, vel semper nisl dictum non. Vestibulum vitae enim eu sem rutrum suscipit ut sit amet neque. Nullam rutrum neque vitae scelerisque vestibulum. Cras vehicula lacus in ipsum commodo maximus. Ut a condimentum justo, non congue nisl. Vestibulum volutpat ipsum ut convallis semper. Sed in semper nunc, imperdiet iaculis ante.</p>
@@ -182,7 +182,16 @@
 		<li><a href="mendel.html">Gregor Mendel</a></li>
 	</ul><br><br>
 </div>
+<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately. -->
+<script>
+    var key = "draft",
+        contentEl = document.getElementById("mainMend");
 
+    contentEl.innerHTML = localStorage[key] || document.getElementById("mainBody").innerHTML;
+    contentEl.onkeyup=function() {
+        localStorage[key] = contentEl.innerHTML;
+    };
+</script>
 <br>
     
 
