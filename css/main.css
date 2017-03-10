@@ -66,6 +66,10 @@
 	right: 100px;
 }
 
+.user-info{
+	color: lightgrey;
+}
+
 .col-height{
 	height: 50px;
 }
