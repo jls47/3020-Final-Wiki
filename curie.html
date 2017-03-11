@@ -189,13 +189,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus congue tempor
 	</ul>
 </div>
 </div>
-<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately. 
+<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately. -->
 <script>
-    var Cur = "draft",
+    var Cur = "draft3",
         contentCu = document.getElementById("mainCur");
 
     contentCu.innerHTML = localStorage[Cur] || document.getElementById("mainCur").innerHTML;
-    contentCu.onCurup=function() {
+    contentCu.onkeyup=function() {
         localStorage[Cur] = contentCu.innerHTML;
     };
 </script>  -->
