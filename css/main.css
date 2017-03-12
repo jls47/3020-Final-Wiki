@@ -89,6 +89,26 @@
 	left: 50vh;
 }
 
+.featured{
+	background: lightgrey;
+	border: 1px solid lightblue;
+	
+	padding: 5px;
+}
+
+.ftimage img{
+	height: 100px;
+	float: right;
+	margin-left: 10px;
+}
+
+.dyk{
+	background: lightgrey;
+	border: 1px solid lightblue;
+	
+	padding: 5px;
+}
+
 .TOC{
 	background: lightgrey;
 	border: 1px solid lightblue;
