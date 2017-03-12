@@ -1,43 +1,56 @@
 
 $(document).ready(function(){
 
-//Table of contents generator
+//Storing the login boolean locally so between refreshes the user will not be logged out.
 	if(!localStorage.getItem("login")){
 		localStorage.setItem("login", "false");
 		console.log("nologin");
 	};
-
+	//Making sure the css for both flexible and desktop layouts display properly depending on the login boolean.
 	if(localStorage.getItem("login") === "false"){
+		//if false, display the login form.
 		$("#login").css("display", "default");
 		$(".user-info").css("display", "none");
 		$("#loginD").css("display", "default");
 		$(".user-infoD").css("display", "none");
-		console.log("1");
 	}else if(localStorage.getItem("login") === "true"){
+		//if true, display the username and a logout button.
 		$("#login").css("display", "none");
 		$(".user-info").css("display", "default");
 		$("#loginD").css("display", "none");
 		$(".user-infoD").css("display", "default");
 		$(".user-fullname").replaceWith(localStorage.getItem("username"));
-		console.log("2");
 	};
 
+	//Upon clicking the login form, the email and pass values are checked against the values kept in the user's local storage, as established by the create function below.
 	$("#Login").click(function(){
 		if($("#email").val() == localStorage.getItem("user") && $("#pass").val() == localStorage.getItem("pass")){
 			//Fading out the login form.  Fancy!
 			$("#login").fadeOut();
 			//Setting the userinfo to come in right as the login form fades out.
 			setTimeout(function(){$(".user-info").fadeIn();}, 400);
-			//Setting the user info to the first and last name
+			//Setting the user info to the username
 			$(".user-fullname").replaceWith(localStorage.getItem("username"));
 			//Lastly, here's the boolean being changed.
 			localStorage.setItem("login", "true");
 		}else{
-			alert("Your login details don't seem to match up.  Make a change or create an account!")
-			return;
-		};
+			//conditionals for the type of alert.  If only the username or pass are wrong, the message will target those.  If both are wrong, a more general message is sent.
+			if($("#email").val() != localStorage.getItem("user") && $("#pass").val() != localStorage.getItem("pass")){
+				alert("Your login credentials don't seem to match up.  Modify your details or create an account!");
+				return;
+			}else if($("#email").val() != localStorage.getItem("user") || $("#pass").val() != localStorage.getItem("pass")){
+				if($("#email").val() != localStorage.getItem("user")){
+					alert("Your username doesn't seem to match up!");
+					return;
+				}else if($("#pass").val() != localStorage.getItem("pass")){
+					alert("Your password doesn't seem to match up!");
+					return;
+				};
+			};
+		};	
 	});
 	
+	//The same as above but for the desktop layout.
 	$("#LoginD").click(function(){
 		if($("#emailD").val() == localStorage.getItem("user") && $("#passD").val() == localStorage.getItem("pass")){
 			//Fading out the login form.  Fancy!
@@ -49,8 +62,18 @@ $(document).ready(function(){
 			//Lastly, here's the boolean being changed.
 			localStorage.setItem("login", "true");
 		}else{
-			alert("Your login details don't seem to match up.  Make a change or create an account!")
-			return;
+			if($("#emailD").val() != localStorage.getItem("user") && $("#passD").val() != localStorage.getItem("pass")){
+				alert("Your login credentials don't seem to match up.  Modify your details or create an account!");
+				return;
+			}else if($("#emailD").val() != localStorage.getItem("user") || $("#passD").val() != localStorage.getItem("pass")){
+				if($("#emailD").val() != localStorage.getItem("user")){
+					alert("Your username doesn't seem to match up!");
+					return;
+				}else if($("#passD").val() != localStorage.getItem("pass")){
+					alert("Your password doesn't seem to match up!");
+					return;
+				};
+			};
 		};
 	});
 	
@@ -72,9 +95,9 @@ $(document).ready(function(){
 		localStorage.setItem("login", "false");
 	});
 
+	//Making the dropdown navbar work on mobile.  Upon clicking the white plus, the menu drops and users are presented with options, and the plus changes to a minus.
 	$("#expand").click(function() {
 		var spanclass = $("#expand").find("span").attr("class");
-		console.log(spanclass);
 		if(spanclass == "glyphicon glyphicon-plus"){
 			$("#expand").find("span").addClass("glyphicon-minus").removeClass("glyphicon-plus");
 		}else{
@@ -82,8 +105,8 @@ $(document).ready(function(){
 		}
 	});
 	
-	var editable = false;
 	
+	//The edit button!  On pages where it's permitted, allows users to click around and type into the mainbody div (intro on down).
 	$("button.editAll").click(function() {
 		if(login == false){
 			alert("You must log in before you can start editing!");
@@ -98,7 +121,7 @@ $(document).ready(function(){
 		};
 	});
 	
-	console.log(window.location.href);
+	//Stores the current page info when clicking on talk tab so that users can return quickly to the page they were on.
 	var href = ""
 	$(".talk").click(function(e) {
 		e.preventDefault();
@@ -107,6 +130,7 @@ $(document).ready(function(){
 		document.location.href="talk.html";
 	});
 	
+	//returning to the page
 	$(".read").click(function(e) {
 		e.preventDefault();
 		document.location.href=localStorage.getItem("href");
@@ -137,10 +161,11 @@ $(document).ready(function(){
 		}
 	};
 	
-	console.log(site.bernerslee.href);
 	
+	//setting up the variable that will store the search data.
 	var tags = "";
 	
+	//The search function!  Pulls whatever the user types in and matches, as best it can, to a page on the site.  Limited to names for now.
 	$("button.search").click(function(e, tags){
 		//First we stop what the button usually does.
 		e.preventDefault();
@@ -152,7 +177,7 @@ $(document).ready(function(){
 			alert("Put some text to search, ya dingus!");
 			return;
 		};
-		console.log(site.bernerslee.href);
+		//Then, if the tags are included in any of the names of the scientists, go to that page!  If not, go to the "does not exist" page.
 		if(tags.toLowerCase().includes("tim") || tags.toLowerCase().includes("berners") || tags.toLowerCase().includes("lee")){
 			location.replace(site.bernerslee.href);
 		}else if(tags.toLowerCase().includes("marie") || tags.toLowerCase().includes("curie")){
@@ -171,6 +196,7 @@ $(document).ready(function(){
 		
 	});
 	
+	//Same with the desktop site format.
 	$("button.searchD").click(function(e, tags){
 		//First we stop what the button usually does.
 		e.preventDefault();
@@ -201,16 +227,16 @@ $(document).ready(function(){
 		
 	});
 	
+	//Usually I would put this together with a loop but here are all the pages.
 	var page = ['lee.html', 'curie.html', 'darwin.html', 'kepler.html', 'mendel.html', 'johnson.html'];
 	
+	//Clicking on the random page gets you to a random page based on the variable index!
 	$("button.random").click(function(e){
 		var index = Math.floor(Math.random() * page.length);
-		console.log(index);
-		console.log(page.length);
 		location.replace(page[index]);
 	});
 	
-	
+	//Smooth scrolling in the table of contents!  The name in the TOC and the name of the div are the same so upon clicking it takes the data and searches for it in the page.
 	$(".TOC").find("a").on('click', function(event) {
 		console.log(this.hash);
 		var hash = this.hash;
@@ -229,6 +255,7 @@ $(document).ready(function(){
 		} // End if
 	});
 	
+	//Going to the creat account page and storing the current location so that users can return to it.
 	$("#createacct").click(function(e){
 		e.preventDefault();
 		href = window.location.href.toString();
@@ -236,6 +263,7 @@ $(document).ready(function(){
 		document.location.href="create.html";
 	});
 	
+	//Same thing on desktop.
 	$("#createacctD").click(function(e){
 		e.preventDefault();
 		href = window.location.href.toString();
@@ -244,16 +272,18 @@ $(document).ready(function(){
 	});
 	
 	//Swiped this email validator regex from Stack Overflow http://stackoverflow.com/questions/46155/validate-email-address-in-javascript
+	//An email validating function that makes sure users put in valid addresses.  Could also be done with validator but I think regex is more rigid.  Not like it's necessary for the passwords or handle at the moment anyhow
 	function validateEmail(email) {
 		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return re.test(email);
 	}
-	
+	//Creating the account.  Accepts an email, two instances of the same password, and a username.  
 	$("#create").click(function(){
 		var email = $("#Cuser").val();
 		var pass1 = $("#Cpass").val();
 		var pass2 = $("#Cpass2").val();
 		var handle = $("#handle").val();
+		//if the email checks out, check the passwords.  If the passes or email don't check out, a particular alert is displayed.
 		if(validateEmail(email)){
 			if(pass1 == pass2){
 				localStorage.setItem("user", email);
@@ -271,7 +301,7 @@ $(document).ready(function(){
 	});
 	
 	
-	//ADDING THE MAPS
+	//ADDING THE CHARLES DARWIN MAP WITH LEAFLET
 	
 //MAPS	
 
@@ -288,22 +318,13 @@ satellite = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-v9/ti
 	id: 'your.mapbox.project.id'
 }),
 
-//and the street layer:
-streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2NoYWVmMTYiLCJhIjoiY2l5bDE1aHZ5MDAydTJ3bnpoaWZqbWpkcSJ9.ip2r4oOtxQdBmGDcL7IaWA', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-	id: 'your.mapbox.project.id'
-});
-
 //put them all into an object to be included into the map:
 var baseMaps = {
 	"Topographic": topo,
 	"Satellite": satellite,
-	"Streets": streets
 };
 
-console.dir(baseMaps);
-
-//including the points of interest with coordinates and popups!
+//including the points of interest with coordinates and popups!  For now the names are the same as on the Rainier Project
 var insPoint = L.marker([-0.880992, -89.523137]).bindPopup("Isla San Cristobal, where Darwin first disembarked and stayed from September 17-22."),
 	SVT = L.marker([-1.2627, -90.437749]).bindPopup("Isla Floreana, where Darwin spent September 24-27."),
 	campMuir = L.marker([-0.732692, -90.984318]).bindPopup("Isla Isabela, where the Beagle spent September 29-October 2."),
@@ -312,7 +333,7 @@ var insPoint = L.marker([-0.880992, -89.523137]).bindPopup("Isla San Cristobal, 
 	
 //putting them all into a layer group
 var POIs = L.layerGroup([insPoint, SVT, campMuir, ingGlacier]);
-	console.log(POIs);
+
 //and then an overlay!
 var overlayMaps = {
 	"POIs": POIs
