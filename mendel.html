@@ -185,16 +185,19 @@
 		<li><a href="mendel.html">Gregor Mendel</a></li>
 	</ul><br><br>
 </div>
-<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately. -->
+<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately. Found on stack overflow.-->
 <script>
+	//establishing a key to preserve the page with.  
     var Men = "draft4",
+		//grabbing all of the content on the page below the header.
         contentMe = document.getElementById("mainMend");
-
+	//setting the inner html to that which has been stored in local storage.  If it doesn't already exist, just grab the thing set above.
     contentMe.innerHTML = localStorage[Men] || document.getElementById("mainMend").innerHTML;
+	//Upon typing in anything on the page, store the keystroke immediately.  
     contentMe.onkeyup=function() {
         localStorage[Men] = contentMe.innerHTML;
     };
-</script> -->
+</script> 
 <br>
     
 

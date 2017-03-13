@@ -194,12 +194,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus congue tempor
 	</ul>
 </div>
 </div>
-<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately. -->
+<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately. Found on stack overflow.-->
 <script>
+	//establishing a key to preserve the page with.  
     var Cur = "draft3",
+		//grabbing all of the content on the page below the header.
         contentCu = document.getElementById("mainCur");
-
+	//setting the inner html to that which has been stored in local storage.  If it doesn't already exist, just grab the thing set above.
     contentCu.innerHTML = localStorage[Cur] || document.getElementById("mainCur").innerHTML;
+	//Upon typing in anything on the page, store the keystroke immediately.  
     contentCu.onkeyup=function() {
         localStorage[Cur] = contentCu.innerHTML;
     };
