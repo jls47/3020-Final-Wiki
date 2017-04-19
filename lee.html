@@ -39,7 +39,7 @@
             <span class = "glyphicon glyphicon-plus"></span>
           </button>
 		  
-          <a class="navbar-brand" href="#">Logo</a>
+          <a class="navbar-brand" href="index.html"><img src="design/images/earth.png" style="width: 40px;"></a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
@@ -49,7 +49,8 @@
             <li><button class="btn btn-default"><a href="talk.html" class = "talk">Talk</a></button></li>
             <li><button class="btn btn-default random" id = "random">Random</button></li>
 			<li><button class="btn btn-default"><a href="help.html">Help</a></button></li>
-			<li><button class="btn btn-default edit"><span class = "glyphicon glyphicon-pencil"></span></button></li>
+			<li><button class="btn btn-default"><a href="directory.html">Directory</a></button></li>
+			<li><button class="btn btn-default editAll"><span class = "glyphicon glyphicon-pencil"></span></button></li>
 			<li>
 			
 				<form class="navbar-form" role="search" id = "searchBar">
@@ -142,7 +143,9 @@
 	<p><img src = "design/images/bernerslee.jpg" style="width:250px;"></p>
 	<p>IMAGE TEXT GOES HERE AND EXPLAINS THINGS</p>
 </div>
-<p>INTROINFOINTROINFOINTROINFOINTROINFO INTROINFOINTROINFOINTROINFOINTROINFO</p>
+<p>Sir Timothy John Berners-Lee OM KBE FRS FREng FRSA FBCS (born 8 June 1955), also known as TimBL, is an English computer scientist, best known as the inventor of the World Wide Web. He made a proposal for an information management system in March 1989, and he implemented the first successful communication between a Hypertext Transfer Protocol (HTTP) client and server via the Internet sometime around mid-November of that same year.</p>
+<p>Berners-Lee is the director of the World Wide Web Consortium (W3C), which oversees the continued development of the Web. He is also the founder of the World Wide Web Foundation, and is a senior researcher and holder of the founders chair at the MIT Computer Science and Artificial Intelligence Laboratory (CSAIL). He is a director of the Web Science Research Initiative (WSRI), and a member of the advisory board of the MIT Center for Collective Intelligence. In 2011, he was named as a member the board of trustees of the Ford Foundation.</p>
+<p>In 2004, Berners-Lee was knighted by Queen Elizabeth II for his pioneering work. In April 2009, he was elected a foreign associate of the United States National Academy of Sciences. Named in Time magazine's list of the 100 Most Important People of the 20th century, Berners-Lee has received a number of other accolades for his invention. He was honoured as the "Inventor of the World Wide Web" during the 2012 Summer Olympics opening ceremony, in which he appeared in person, working with a vintage NeXT Computer at the London Olympic Stadium. He tweeted "This is for everyone", which instantly was spelled out in LCD lights attached to the chairs of the 80,000 people in the audience.</p>
 <br><br>
 <div class = "TOC">
 	<p>Table of Contents</p>
@@ -182,16 +185,16 @@
 	</ul><br><br>
 </div>
 </div>
-<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately. 
+<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately.--> 
 <script>
-    var Lee = "draft",
+    var Lee = "draft1",
         contentLe = document.getElementById("mainLee");
 
-    contentLe.innerHTML = localStorage[Lee] || document.getElementById("mainBody").innerHTML;
-    contentLe.onLeeup=function() {
+    contentLe.innerHTML = localStorage[Lee] || document.getElementById("mainLee").innerHTML;
+    contentLe.onkeyup=function() {
         localStorage[Lee] = contentLe.innerHTML;
     };
-</script> -->
+</script>
 <br>
     
 

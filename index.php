@@ -40,17 +40,17 @@
             <span class = "glyphicon glyphicon-plus" id = "expand"></span>
           </button>
 		  
-          <a class="navbar-brand" href="index.html"><img src="design/images/earth.png" style="width: 40px;"></a>
+          <a class="navbar-brand" href="index.php"><img src="design/images/earth.png" style="width: 40px;"></a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
           <ul class="nav navbar-nav" id = "tabletnav>
             
 			<!-- Use JQUERY upon login to generate a logout button -->
-            <li><button class="btn btn-default"><a href="talk.html">Talk</a></button></li>
+            <li><button class="btn btn-default"><a href="talk.php">Talk</a></button></li>
             <li><button class="btn btn-default random" id = "random">Random</button></li>
-			<li><button class="btn btn-default"><a href="help.html">Help</a></button></li>
-			<li><button class="btn btn-default"><a href="directory.html">Directory</a></button></li>
+			<li><button class="btn btn-default"><a href="help.php">Help</a></button></li>
+			<li><button class="btn btn-default"><a href="directory.php">Directory</a></button></li>
 			<li><button class="btn btn-default edit"><span class = "glyphicon glyphicon-pencil"></span></button></li>
 			<li>
 			
@@ -74,7 +74,7 @@
               <input type="password" placeholder="Password" class="form-control" id = "pass">
             </div>
             <a class="btn btn-default btn-sm" id = "Login">Login</a><br>
-			<a href="create.html" id = "createacct">Create account</a>
+			<a href="create.php" id = "createacct">Create account</a>
           </form>
 		  </li>
           </ul>
@@ -86,7 +86,7 @@
 	<nav class = "navbar navbar-default" id = "desktopNavbar">
 		<div class = "container">
 			<div class="navbar-header col-md-6 col-height">
-				<a class="navbar-brand" href="index.html"><img src = "design/images/earth.png" style="width:130px;"></a>
+				<a class="navbar-brand" href="index.php"><img src = "design/images/earth.png" style="width:130px;"></a>
 				
 			</div>
 		</div>
@@ -100,13 +100,13 @@
               <input type="password" placeholder="Password" class="form-control" id = "passD">
             </div>
             <a class="btn btn-default btn-sm" id = "LoginD">Login</a><br>
-			<a href="create.html" id = "createacctD">Create account</a>
+			<a href="create.php" id = "createacctD">Create account</a>
           </form>
 		
 		<div class = "navtabs">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="" class = "read">Read</a></li>
-			<li><a href="talk.html" class = "talk">Talk</a></li>
+			<li><a href="talk.php" class = "talk">Talk</a></li>
 			<li><button class = " btn btn-default btn-sm editAll">Edit <span class = "glyphicon glyphicon-pencil"></span></button></li>
 		</ul>
 		
@@ -125,11 +125,11 @@
 		<div class="col-md-2 col-haight" id="leftCol">
               
               	<ul class="nav nav-stacked" id="sidebar">
-                  <li><a href="index.html">Main Page</a></li>
-                  <li><a href="directory.html">Directory</a></li>
+                  <li><a href="index.php">Main Page</a></li>
+                  <li><a href="directory.php">Directory</a></li>
                   <li><button class="btn btn-default random" id = "random">Random</button></li>
 				  <!-- Create help page -->
-                   <li><a href="help.html">Help</a></li>
+                   <li><a href="help.php">Help</a></li>
               	</ul>
               
       		</div>  
@@ -146,9 +146,9 @@
 	<h3>Featured Article</h3>
 	<p class="ftimage"><img src = "design/images/kepler.jpg"></p>
 	
-	<p><a href="kepler.html">Johannes Kepler</a> (German: [joˈhanəsˈkɛplɐ]; December 27, 1571 – November 15, 1630) was a German mathematician, astronomer, and astrologer. A key figure in the 17th-century scientific revolution, he is best known for his laws of planetary motion, based on his works Astronomia nova, Harmonices Mundi, and Epitome of Copernican Astronomy. These works also provided one of the foundations for Isaac Newton's theory of universal gravitation.</p>
+	<p><a href="kepler.php">Johannes Kepler</a> (German: [joˈhanəsˈkɛplɐ]; December 27, 1571 – November 15, 1630) was a German mathematician, astronomer, and astrologer. A key figure in the 17th-century scientific revolution, he is best known for his laws of planetary motion, based on his works Astronomia nova, Harmonices Mundi, and Epitome of Copernican Astronomy. These works also provided one of the foundations for Isaac Newton's theory of universal gravitation.</p>
 	<br>
-	<p><a href = "kepler.html">Read more...</a></p>
+	<p><a href = "kepler.php">Read more...</a></p>
 </div>
 
 <br><br><br>
@@ -156,13 +156,13 @@
 	<h3>Did you know...</h3>
 	
 	<ul>
-		<li>That <a href="curie.html">Marie Curie</a> discovered the idea of radioactivity?</li>
-		<li><a href="darwin.html">Charles Darwin</a> also made important discoveries regarding fossils elsewhere in South America?</li>
-		<li>That without <a href="lee.html">Tim Berners-Lee</a> literally none of us would be studying this field right now?</li>
+		<li>That <a href="curie.php">Marie Curie</a> discovered the idea of radioactivity?</li>
+		<li><a href="darwin.php">Charles Darwin</a> also made important discoveries regarding fossils elsewhere in South America?</li>
+		<li>That without <a href="lee.php">Tim Berners-Lee</a> literally none of us would be studying this field right now?</li>
 	</ul>
 </div>
 <br><br><br>
-<p>Check out the <a href="directory.html">Directory</a> for all the articles!</p>
+<p>Check out the <a href="directory.php">Directory</a> for all the articles!</p>
 
 <br><br><br>
 

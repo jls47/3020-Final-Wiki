@@ -6,12 +6,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Charles Darwin</title>
+        <title>Gregor Mendel</title>
         <meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
             body {
                 padding-top: 0px;
@@ -38,17 +39,17 @@
             <span class = "glyphicon glyphicon-plus"></span>
           </button>
 		  
-          <a class="navbar-brand" href="index.html"><img src="design/images/earth.png" style="width: 40px;"></a>
+          <a class="navbar-brand" href="index.php"><img src="design/images/earth.png" style="width: 40px;"></a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
           <ul class="nav navbar-nav">
             
 			<!-- Use JQUERY upon login to generate a logout button -->
-            <li><button class="btn btn-default"><a href="talk.html" class = "talk">Talk</a></button></li>
+            <li><button class="btn btn-default"><a href="talk.php" class = "talk">Talk</a></button></li>
             <li><button class="btn btn-default random" id = "random">Random</button></li>
-			<li><button class="btn btn-default"><a href="help.html">Help</a></button></li>
-			<li><button class="btn btn-default"><a href="directory.html">Directory</a></button></li>
+			<li><button class="btn btn-default"><a href="help.php">Help</a></button></li>
+			<li><button class="btn btn-default"><a href="directory.php">Directory</a></button></li>
 			<li><button class="btn btn-default editAll"><span class = "glyphicon glyphicon-pencil"></span></button></li>
 			<li>
 			
@@ -72,7 +73,7 @@
               <input type="password" placeholder="Password" class="form-control" id = "pass">
             </div>
             <a class="btn btn-default btn-sm" id = "Login">Login</a><br>
-			<a href="create.html" id = "createacct">Create account</a>
+			<a href="create.php" id = "createacct">Create account</a>
           </form>
 		  </li>
           </ul>
@@ -84,7 +85,7 @@
 	<nav class = "navbar navbar-default" id = "desktopNavbar">
 		<div class = "container">
 			<div class="navbar-header col-md-6 col-height">
-				<a class="navbar-brand" href="index.html"><img src = "design/images/earth.png" style="width:130px;"></a>
+				<a class="navbar-brand" href="index.php"><img src = "design/images/earth.png" style="width:130px;"></a>
 				
 			</div>
 		</div>
@@ -98,13 +99,13 @@
               <input type="password" placeholder="Password" class="form-control" id = "passD">
             </div>
             <a class="btn btn-default btn-sm" id = "LoginD">Login</a><br>
-			<a href="create.html" id = "createacctD">Create account</a>
+			<a href="create.php" id = "createacctD">Create account</a>
           </form>
 		
 		<div class = "navtabs">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#">Read</a></li>
-			<li><a href="talk.html" class = "talk">Talk</a></li>
+			<li><a href="talk.php" class = "talk">Talk</a></li>
 			<li><button class = " btn btn-default btn-sm editAll">Edit <span class = "glyphicon glyphicon-pencil"></span></button></li>
 		</ul>
 		
@@ -123,11 +124,11 @@
 		<div class="col-md-2 col-haight" id="leftCol">
               
               	<ul class="nav nav-stacked" id="sidebar">
-                  <li><a href="index.html">Main Page</a></li>
-                  <li><a href="directory.html">Directory</a></li>
+                  <li><a href="index.php">Main Page</a></li>
+                  <li><a href="directory.php">Directory</a></li>
                   <li><button class="btn btn-default random" id = "random">Random</button></li>
 				  <!-- Create help page -->
-                   <li><a href="help.html">Help</a></li>
+                   <li><a href="help.php">Help</a></li>
               	</ul>
               
       		</div>  
@@ -135,18 +136,16 @@
 	</div>
 </div> 
 
-<div class = "container" id = "mainDar" contenteditable = "false">
-<h1>Charles Darwin</h1>
+<div class = "container" id = "mainMend">
+<h1>Gregor Mendel</h1>
 <hr>
 <div class = "imagebox">
-	<p><img src = "design/images/darwin.jpg" style="width:250px;"></p>
+	<p><img src = "design/images/mendel.png" style="width:250px;"></p>
 	<p>IMAGE TEXT GOES HERE AND EXPLAINS THINGS</p>
 </div>
-<p>Charles Robert Darwin, FRS FRGS FLS FZS (/ˈdɑːrwɪn/; 12 February 1809 – 19 April 1882) was an English naturalist, geologist and biologist, best known for his contributions to the science of evolution.[I] He established that all species of life have descended over time from common ancestors, and in a joint publication with Alfred Russel Wallace introduced his scientific theory that this branching pattern of evolution resulted from a process that he called natural selection, in which the struggle for existence has a similar effect to the artificial selection involved in selective breeding.</p>
-<p>Darwin published his theory of evolution with compelling evidence in his 1859 book On the Origin of Species, overcoming scientific rejection of earlier concepts of transmutation of species. By the 1870s, the scientific community and much of the general public had accepted evolution as a fact. However, many favoured competing explanations and it was not until the emergence of the modern evolutionary synthesis from the 1930s to the 1950s that a broad consensus developed in which natural selection was the basic mechanism of evolution. In modified form, Darwin's scientific discovery is the unifying theory of the life sciences, explaining the diversity of life.</p>
-<p>Darwin's early interest in nature led him to neglect his medical education at the University of Edinburgh; instead, he helped to investigate marine invertebrates. Studies at the University of Cambridge (Christ's College) encouraged his passion for natural science. His five-year voyage on HMS Beagle established him as an eminent geologist whose observations and theories supported Charles Lyell's uniformitarian ideas, and publication of his journal of the voyage made him famous as a popular author.</p>
-<p>Puzzled by the geographical distribution of wildlife and fossils he collected on the voyage, Darwin began detailed investigations and in 1838 conceived his theory of natural selection. Although he discussed his ideas with several naturalists, he needed time for extensive research and his geological work had priority. He was writing up his theory in 1858 when Alfred Russel Wallace sent him an essay that described the same idea, prompting immediate joint publication of both of their theories. Darwin's work established evolutionary descent with modification as the dominant scientific explanation of diversification in nature. In 1871 he examined human evolution and sexual selection in The Descent of Man, and Selection in Relation to Sex, followed by The Expression of the Emotions in Man and Animals (1872). His research on plants was published in a series of books, and in his final book, The Formation of Vegetable Mould, through the Actions of Worms (1881), he examined earthworms and their effect on soil.</p>
-<p>Darwin has been described as one of the most influential figures in human history, and he was honoured by burial in Westminster Abbey.</p>
+<p>Gregor Johann Mendel (Czech: Řehoř Jan Mendel; 20 July 1822 – 6 January 1884) (English /ˈmɛndəl/) was a scientist, Augustinian friar and abbot of St. Thomas' Abbey in Brno, Margraviate of Moravia. Mendel was born in a German-speaking family in Silesian part of Austrian Empire (today's Czech Republic) and gained posthumous recognition as the founder of the modern science of genetics. Though farmers had known for centuries that crossbreeding of animals and plants could favor certain desirable traits, Mendel's pea plant experiments conducted between 1856 and 1863 established many of the rules of heredity, now referred to as the laws of Mendelian inheritance.</p>
+<p>Mendel worked with seven characteristics of pea plants: plant height, pod shape and color, seed shape and color, and flower position and color. With seed color, he showed that when a yellow pea and a green pea were bred together their offspring plant was always yellow. However, in the next generation of plants, the green peas reappeared at a ratio of 1:3. To explain this phenomenon, Mendel coined the terms “recessive” and “dominant” in reference to certain traits. (In the preceding example, green peas are recessive and yellow peas are dominant.) He published his work in 1866, demonstrating the actions of invisible “factors”—now called genes—in providing for visible traits in predictable ways.</p>
+<p>The profound significance of Mendel's work was not recognized until the turn of the 20th century (more than three decades later) with the independent rediscovery of these laws. Erich von Tschermak, Hugo de Vries, Carl Correns, and William Jasper Spillman independently verified several of Mendel's experimental findings, ushering in the modern age of genetics.</p>
 <br><br>
 <div class = "TOC">
 	<p>Table of Contents</p>
@@ -161,37 +160,44 @@
 <div class = "mainContent"><hr>
 	<h2 data-toggle="collapse" data-target=".content1" id = "mobileView">CONTENTHEADER</h2>
 	<h2 id = "desktopView">CONTENTHEADER1</h2><hr>
-	<p id = "content1">Donec non fringilla diam. Curabitur consectetur eu libero ut maximus. Suspendisse in odio in enim maximus congue. Vestibulum nec sollicitudin massa. Vestibulum ac volutpat metus, sed luctus turpis. Cras dapibus maximus nibh, ac interdum magna bibendum id. Duis vulputate massa ut purus pellentesque, eu lobortis enim suscipit. Curabitur at malesuada justo. Vivamus nec ex sit amet ipsum tincidunt lobortis eget ut massa. Pellentesque quis eros ut urna ullamcorper hendrerit ac sit amet velit. Ut id suscipit ligula. Praesent placerat, ex eget pretium porta, ante turpis rutrum lectus, quis vestibulum velit felis eget quam. Vestibulum ultricies eu orci eu volutpat. Proin ac mi est. Donec quam nisi, tempor non tempor et, auctor eu ipsum. Maecenas eget ipsum rhoncus, pharetra urna in, congue risus.</p>
+	<p id = "content1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a sollicitudin enim, quis placerat tortor. Etiam dictum vitae risus sed vulputate. Nullam scelerisque lectus id diam finibus bibendum. Phasellus quis massa augue. Sed interdum purus vel lorem placerat, at mollis augue malesuada. Morbi sagittis eros velit, nec accumsan mauris placerat vel. Curabitur sit amet neque interdum orci maximus fermentum. Aenean at ex vel sapien semper egestas et ac libero. Praesent euismod interdum mi, vel semper nisl dictum non. Vestibulum vitae enim eu sem rutrum suscipit ut sit amet neque. Nullam rutrum neque vitae scelerisque vestibulum. Cras vehicula lacus in ipsum commodo maximus. Ut a condimentum justo, non congue nisl. Vestibulum volutpat ipsum ut convallis semper. Sed in semper nunc, imperdiet iaculis ante.</p>
 	<br>
 	<h2 data-toggle="collapse" data-target=".content2" id = "mobileView">CONTENTHEADER</h2>
 	<h2 id = "desktopView">CONTENTHEADER2</h2><hr>
 	<div class = "imagebox">
-		<p><div id="map-container"></div></p>
-		<p>The Galapagos Islands, where Darwin made his landmark discoveries and laid the foundations for the field of evolutionary biology.</p>
+		<p><div class = "mapbox"><iframe
+			width="288"
+			height="300"
+			frameborder="0" style="border:0"
+			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCC8spjvfLSkO96FHDlJfac1Yla9SRBWRc&q=Church+Of+St.+Thomas,Brno" allowfullscreen>
+		</iframe></div></p>
+		<p>The former Abbey of St. Thomas, where Mendel discovered the principal ideas of genetics.</p>
 	</div>
-	<p id = "content2">Cras rhoncus, arcu et consequat venenatis, purus dui placerat libero, non fringilla urna enim vel erat. Quisque imperdiet justo ac efficitur porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque aliquet porttitor nisi, id luctus felis accumsan ac. Proin sed nulla condimentum, dignissim neque in, egestas mi. Vivamus blandit diam vitae molestie venenatis. Nullam fermentum ligula quis ultrices molestie. Mauris non volutpat tortor. Donec hendrerit tempus purus, vel pulvinar dolor lacinia in. Integer semper at ex at accumsan. Quisque eu porttitor ipsum. Donec gravida ac nisi id lacinia. Donec tempor tellus eu vestibulum accumsan. Pellentesque magna urna, lobortis quis ultricies quis, viverra eu sem. Phasellus eget suscipit metus, id molestie diam.</p>
+	<p id = "content2">Vestibulum eros justo, porta et ultrices ac, porttitor ac sapien. In hac habitasse platea dictumst. Suspendisse eget ante quis tortor dapibus fermentum. Vivamus vitae volutpat velit. Aliquam blandit, erat at consectetur dignissim, metus nulla blandit nulla, bibendum tristique risus lacus et nisl. Nulla sodales lorem vel tincidunt tincidunt. Sed eu fermentum ex. In nec ipsum aliquet, viverra tortor a, congue risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus vehicula tristique rutrum. Nam vulputate tincidunt suscipit. Mauris suscipit venenatis egestas. Vestibulum et viverra erat, eu fringilla diam. Vestibulum et tincidunt erat. Nullam in magna eget nulla pellentesque aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
 
 </div>
 <br><br><br>
 <div class = "content-footer">
 	<p>Related:</p>
 	<p class = "related">Biologists</p>
-	<ul class = "relatedArts">
-		<li><a rhef="darwin.html">Charles Darwin</a></li>
-		<li><a href="mendel.html">Gregor Mendel</a></li>
+	<ul class = "Biologists">
+		<li><a href="darwin.php">Charles Darwin</a></li>
+		<li><a href="mendel.php">Gregor Mendel</a></li>
 	</ul><br><br>
 </div>
-</div>
-<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately.-->
+<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately. Found on stack overflow.-->
 <script>
-    var Dar = "draft2",
-        contentDa = document.getElementById("mainDar");
-
-    contentDa.innerHTML = localStorage[Dar] || document.getElementById("mainDar").innerHTML;
-    contentDa.onkeyup=function() {
-        localStorage[Dar] = contentDa.innerHTML;
+	//establishing a key to preserve the page with.  
+    var Men = "draft4",
+		//grabbing all of the content on the page below the header.
+        contentMe = document.getElementById("mainMend");
+	//setting the inner html to that which has been stored in local storage.  If it doesn't already exist, just grab the thing set above.
+    contentMe.innerHTML = localStorage[Men] || document.getElementById("mainMend").innerHTML;
+	//Upon typing in anything on the page, store the keystroke immediately.  
+    contentMe.onkeyup=function() {
+        localStorage[Men] = contentMe.innerHTML;
     };
-</script>  
+</script> 
 <br>
     
 

@@ -55,10 +55,18 @@
 	}
 	
 	body{
-		font-size: 1.5em;
+		font-size: 300%;
+	}
+	
+	.content-footer{
+		width: 700px;
 	}
 	
 } 
+
+#expand{
+	color: white;
+}
 
 #desktopNavbar{
 	height: 150px;
@@ -85,11 +93,30 @@
 	left: 50vh;
 }
 
+.featured{
+	background: lightgrey;
+	border: 1px solid lightblue;
+	
+	padding: 5px;
+}
+
+.ftimage img{
+	height: 100px;
+	float: right;
+	margin-left: 10px;
+}
+
+.dyk{
+	background: lightgrey;
+	border: 1px solid lightblue;
+	
+	padding: 5px;
+}
+
 .TOC{
 	background: lightgrey;
 	border: 1px solid lightblue;
-	width: 20vh;
-	left: 20vh;
+	width: 200px;
 	padding: 5px;
 }
 

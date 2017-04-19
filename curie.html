@@ -39,7 +39,7 @@
             <span class = "glyphicon glyphicon-plus"></span>
           </button>
 		  
-          <a class="navbar-brand" href="#">Logo</a>
+          <a class="navbar-brand" href="index.html"><img src="design/images/earth.png" style="width: 40px;"></a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
@@ -49,7 +49,8 @@
             <li><button class="btn btn-default"><a href="talk.html" class = "talk">Talk</a></button></li>
             <li><button class="btn btn-default random" id = "random">Random</button></li>
 			<li><button class="btn btn-default"><a href="help.html">Help</a></button></li>
-			<li><button class="btn btn-default edit"><span class = "glyphicon glyphicon-pencil"></span></button></li>
+			<li><button class="btn btn-default"><a href="directory.html">Directory</a></button></li>
+			<li><button class="btn btn-default editAll"><span class = "glyphicon glyphicon-pencil"></span></button></li>
 			<li>
 			
 				<form class="navbar-form" role="search" id = "searchBar">
@@ -142,7 +143,11 @@
 	<p><img src = "design/images/curie.png" style="width:250px;"></p>
 	<p>IMAGE TEXT GOES HERE AND EXPLAINS THINGS</p>
 </div>
-<p>INTROINFOINTROINFOINTROINFOINTROINFO INTROINFOINTROINFOINTROINFOINTROINFO</p>
+<p>Marie Skłodowska Curie (/ˈkjʊri, kjʊˈriː/; French: [kyʁi]; Polish: [kʲiˈri]; 7 November 1867 – 4 July 1934), born Maria Salomea Skłodowska ([ˈmarja salɔˈmɛa skwɔˈdɔfska]), was a Polish and naturalized-French physicist and chemist who conducted pioneering research on radioactivity. She was the first woman to win a Nobel Prize, the first person and only woman to win twice, the only person to win a Nobel Prize in two different sciences, and was part of the Curie family legacy of five Nobel Prizes. She was also the first woman to become a professor at the University of Paris, and in 1995 became the first woman to be entombed on her own merits in the Panthéon in Paris.</p>
+<p>She was born in Warsaw, in what was then the Kingdom of Poland, part of the Russian Empire. She studied at Warsaw's clandestine Floating University and began her practical scientific training in Warsaw. In 1891, aged 24, she followed her older sister Bronisława to study in Paris, where she earned her higher degrees and conducted her subsequent scientific work. She shared the 1903 Nobel Prize in Physics with her husband Pierre Curie and with physicist Henri Becquerel. She won the 1911 Nobel Prize in Chemistry.</p>
+<p>Her achievements included the development of the theory of radioactivity (a term that she coined), techniques for isolating radioactive isotopes, and the discovery of two elements, polonium and radium. Under her direction, the world's first studies were conducted into the treatment of neoplasms, using radioactive isotopes. She founded the Curie Institutes in Paris and in Warsaw, which remain major centres of medical research today. During World War I, she developed mobile radiography units to provide X-ray services to field hospitals.</p>
+<p>While a French citizen, Marie Skłodowska Curie (she used both surnames) never lost her sense of Polish identity. She taught her daughters the Polish language and took them on visits to Poland. She named the first chemical element that she discovered‍—‌polonium, which she isolated in 1898‍—‌after her native country.[a]</p>
+<p>Curie died in 1934, aged 66, at a sanatorium in Sancellemoz (Haute-Savoie), France, due to aplastic anemia brought on by exposure to radiation while carrying test tubes of radium in her pockets during research, and in the course of her work at field hospitals during World War I.</p>
 <br><br>
 <div class = "TOC">
 	<p>Table of Contents</p>
@@ -189,16 +194,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus congue tempor
 	</ul>
 </div>
 </div>
-<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately. 
+<!--Script for allowing edits to persist locally!  Can't do server side without php unfortunately. Found on stack overflow.-->
 <script>
-    var Cur = "draft",
+	//establishing a key to preserve the page with.  
+    var Cur = "draft3",
+		//grabbing all of the content on the page below the header.
         contentCu = document.getElementById("mainCur");
-
+	//setting the inner html to that which has been stored in local storage.  If it doesn't already exist, just grab the thing set above.
     contentCu.innerHTML = localStorage[Cur] || document.getElementById("mainCur").innerHTML;
-    contentCu.onCurup=function() {
+	//Upon typing in anything on the page, store the keystroke immediately.  
+    contentCu.onkeyup=function() {
         localStorage[Cur] = contentCu.innerHTML;
     };
-</script>  -->
+</script>  
 <br>
     
 
