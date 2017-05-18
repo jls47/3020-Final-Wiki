@@ -68,7 +68,7 @@
 		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "LogoutD">Logout</a></div>
           <form class="navbar-form navbar-right" role="form" id="loginD">
             <a class="btn btn-default btn-sm" id = "Login">Login</a><br>
-			<a href="#createaccount">Create account</a>
+			<a href="#createaccount" onclick = "ga('send', 'event', 'Create account link', 'Click', 'Success');">Create account</a>
           </form>
 		  </li>
           </ul>
@@ -82,7 +82,7 @@
               <input type="password" placeholder="Password" class="form-control" id = "pass">
             </div>
             <a class="btn btn-default btn-sm" id = "Login">Login</a><br>
-			<a href="create.html" id = "createacct">Create account</a>
+			<a href="create.html" onclick = "ga('send', 'event', 'Create account link', 'Click', 'Success');" id = "createacct">Create account</a>
           </form>
 		  
 >>>>>>> refs/remotes/origin/gh-pages
