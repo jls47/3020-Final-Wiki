@@ -4,10 +4,9 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
     <head>
-	
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Page Not Found</title>
+        <title>A Small Science Wiki</title>
         <meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
@@ -27,15 +26,15 @@
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 		
 		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-			ga('create', 'UA-99012705-2', 'auto');
-			ga('send', 'pageview');
+  ga('create', 'UA-99012705-2', 'auto');
+  ga('send', 'pageview');
 
-		</script>
+</script>
 		
     </head>
     <body>
@@ -43,23 +42,24 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 <div class = "headers">
+	
       <nav class="navbar navbar-inverse" data-spy = "affix" data-offset-top="50" id = "mobileView">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" id = "expand">
             
-            <span class = "glyphicon glyphicon-plus"></span>
+            <span class = "glyphicon glyphicon-plus" id = "expand"></span>
           </button>
 		  
           <a class="navbar-brand" href="index.html"><img src="design/images/earth.png" style="width: 40px;"></a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav" id = "tabletnav>
             
 			<!-- Use JQUERY upon login to generate a logout button -->
-            <li><button class="btn btn-default"><a href="talk.html" class = "talk">Talk</a></button></li>
-            <li><button class="btn btn-default" id = "random">Random</button></li>
+            <li><button class="btn btn-default"><a href="talk.html">Talk</a></button></li>
+            <li><button class="btn btn-default random" id = "random">Random</button></li>
 			<li><button class="btn btn-default"><a href="help.html">Help</a></button></li>
 			<li><button class="btn btn-default"><a href="directory.html">Directory</a></button></li>
 			<li><button class="btn btn-default edit"><span class = "glyphicon glyphicon-pencil"></span></button></li>
@@ -76,10 +76,16 @@
 			
 			</li>
 		<li>	
-		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "LogoutD">Logout</a></div>
-          <form class="navbar-form navbar-right" role="form" id="loginD">
+		<div class="navbar-right user-info">Welcome, <span class="user-fullname">Username</span> <a class="btn btn-default btn-sm" id = "Logout">Logout</a></div>
+          <form class="navbar-form navbar-right" role="form" id="login">
+			<div class="form-group">
+				<input type="text" placeholder="Email" class="form-control" id = "email">
+			</div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control" id = "pass">
+            </div>
             <a class="btn btn-default btn-sm" id = "Login">Login</a><br>
-			<a href="#createaccount">Create account</a>
+			<a href="create.html" onclick = "ga('send', 'event', 'click', 'Create account button', 'createacct');" id = "createacct">Create account</a>
           </form>
 		  </li>
           </ul>
@@ -96,21 +102,21 @@
 			</div>
 		</div>
 		
-		<div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm" id = "Logout">Logout</a></div>
-          <form class="navbar-form navbar-right" role="form" id="login">
+		<div class="navbar-right user-infoD">Welcome, <span class="user-fullname">Username</span> <a class="btn btn-default btn-sm" id = "LogoutD">Logout</a></div>
+          <form class="navbar-form navbar-right" role="form" id="loginD">
+			<div class="form-group">
+				<input type="text" placeholder="Email" class="form-control" id = "emailD">
+			</div>
             <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+              <input type="password" placeholder="Password" class="form-control" id = "passD">
             </div>
             <a class="btn btn-default btn-sm" id = "LoginD">Login</a><br>
-			<a href="#createaccount">Create account</a>
+			<a href="create.html" class="btn btn-primary btn-sm" onclick = "ga('send', 'event', 'Create account link', 'Click', 'Success');" id = "createacctD">Create account to edit pages!</a>
           </form>
 		
 		<div class = "navtabs">
 		<ul class="nav nav-tabs">
-			<li class="active"><a href="#">Read</a></li>
+			<li class="active"><a href="" class = "read">Read</a></li>
 			<li><a href="talk.html" class = "talk">Talk</a></li>
 			<li><button class = " btn btn-default btn-sm editAll">Edit <span class = "glyphicon glyphicon-pencil"></span></button></li>
 		</ul>
@@ -142,34 +148,49 @@
 	</div>
 </div> 
 
-<div class = "container" id = "mainBody">
-<h1> Create an account! </h1><hr><br>
-<div class="form-group">
-    <input type="text" placeholder="Pick a username" class="form-control" id = "handle">
-</div>
-<br>
-<div class="form-group">
-    <input type="text" placeholder="Any email (literally as long as it has -@-.-)" class="form-control" id = "Cuser">
-</div><br>
-<div class="form-group">
-    <input type="password" placeholder="Password" class="form-control" id = "Cpass">
-</div><br>
+<div class = "container" id = "mainBody" contenteditable = "false";>
+<h1>S C I E N T I S T P E D I A</h1>
+<h2>M A I N   P A G E</h2>
+<hr>
 
-<div class="form-group">
-    <input type="password" placeholder="Confirm Password" class="form-control" id = "Cpass2">
-</div><br><br>
-<a class="btn btn-default btn-sm" onclick = "ga('send', 'event', 'click', 'account created', 'create');" id = "create">Create account with these details</a><br>
+<div class = "featured">
+	<h3>Featured Article</h3>
+	<p class="ftimage"><img src = "design/images/kepler.jpg"></p>
+	
+	<p><a href="kepler.html">Johannes Kepler</a> (German: [joˈhanəsˈkɛplɐ]; December 27, 1571 – November 15, 1630) was a German mathematician, astronomer, and astrologer. A key figure in the 17th-century scientific revolution, he is best known for his laws of planetary motion, based on his works Astronomia nova, Harmonices Mundi, and Epitome of Copernican Astronomy. These works also provided one of the foundations for Isaac Newton's theory of universal gravitation.</p>
+	<br>
+	<p><a href = "kepler.html">Read more...</a></p>
 </div>
 
-<br>
+<br><br><br>
+<div class = "dyk">
+	<h3>Did you know...</h3>
+	
+	<ul>
+		<li>That <a href="curie.html">Marie Curie</a> discovered the idea of radioactivity?</li>
+		<li><a href="darwin.html">Charles Darwin</a> also made important discoveries regarding fossils elsewhere in South America?</li>
+		<li>That without <a href="lee.html">Tim Berners-Lee</a> literally none of us would be studying this field right now?</li>
+	</ul>
+</div>
+<br><br><br>
+<p>Check out the <a href="directory.html">Directory</a> for all the articles!</p>
+
+<br><br><br>
+
     
 
 	(c) JLS 2017
     </body>
+	
+	<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC8spjvfLSkO96FHDlJfac1Yla9SRBWRc&callback=initMap">
+    </script>
 	
 	<script src="js/vendor/jquery-1.11.2.min.js"></script>
     <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
     <script src="js/vendor/bootstrap.min.js"></script>
 
     <script src="js/main.js"></script>
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
 </html>
